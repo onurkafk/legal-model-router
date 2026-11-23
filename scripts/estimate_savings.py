@@ -28,7 +28,8 @@ def work(a: dict) -> Work:
                 area, TABLE['line_of_practice_area'].get(area, 'overall'))
 
 
-def main() -> None:
+def estimate() -> dict:
+    """Average cost and tokens per task for the router and for each single-model setup."""
     cost, tokens, picks = Counter(), Counter(), Counter()
     for line in ANSWERS.read_text().splitlines():
         r = route(work(json.loads(line)['answers']))
@@ -43,11 +44,18 @@ def main() -> None:
             cost['router, no escalations'] += VALS[r.line][vals_id]['cost_per_test']
             for name, m in SINGLE.items():
                 cost[f'{name}, no escalations'] += VALS[r.line][m]['cost_per_test']
-    n, ours = sum(picks.values()), cost['Legal Model Router']
-    print(f'{n} requests: ' + ', '.join(f'{p} {c}' for p, c in picks.most_common()))
+    n = sum(picks.values())
+    return {'requests': n, 'picks': dict(picks.most_common()),
+            'cost': {k: v / n for k, v in cost.items()}, 'tokens': {k: v / n for k, v in tokens.items()}}
+
+
+def main() -> None:
+    e = estimate()
+    cost, ours = e['cost'], e['cost']['Legal Model Router']
+    print(f"{e['requests']} requests: " + ', '.join(f'{p} {c}' for p, c in e['picks'].items()))
     print(f"{'':20} {'per task':>9} {'tokens':>8} {'router saves':>13}")
     for name in ('Legal Model Router', *SINGLE):
-        print(f'{name:20} ${cost[name] / n:8.2f} {tokens[name] / n / 1e6:7.2f}M {1 - ours / cost[name]:12.0%}')
+        print(f"{name:20} ${cost[name]:8.2f} {e['tokens'][name] / 1e6:7.2f}M {1 - ours / cost[name]:12.0%}")
     rest = cost['router, no escalations']
     print('Without the bespoke drafts it sends to Opus 5.5: ' + ', '.join(
         f'{1 - rest / cost[f"{name}, no escalations"]:.0%} less than {name}' for name in SINGLE))

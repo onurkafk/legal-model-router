@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Legal Model Router: cost per legal task</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 960px; height: 400px; background: #ffffff; }
+  body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #0a0a0a; padding: 48px 56px; -webkit-font-smoothing: antialiased;
+    font-feature-settings: "tnum" 1, "cv11" 1;
+  }
+  .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #737373; font-weight: 500; }
+  h1 { font-size: 40px; line-height: 1.1; letter-spacing: -.025em; font-weight: 600; margin-top: 10px; }
+  .chart { margin-top: 40px; display: grid; gap: 18px; }
+  .row { display: grid; grid-template-columns: 180px 1fr 190px; align-items: center; gap: 20px; }
+  .label { font-size: 16px; color: #737373; }
+  .track { height: 28px; }
+  .bar { height: 100%; border-radius: 6px; background: #e5e5e5; }
+  .value { font-size: 20px; font-weight: 600; letter-spacing: -.01em; display: flex; align-items: baseline; gap: 10px; }
+  .value span { white-space: nowrap; font-size: 13px; font-weight: 400; color: #a3a3a3; letter-spacing: 0; }
+  .mine .label { color: #0a0a0a; font-weight: 600; }
+  .mine .bar { background: #0a0a0a; }
+  footer { margin-top: 40px; padding-top: 16px;
+           border-top: 1px solid #ededed; font-size: 13px; color: #a3a3a3; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Average cost per legal task</div>
+  <h1>57% less than Claude Opus 5.5</h1>
+  <div class="chart">
+      <div class="row">
+        <div class="label">Claude Opus 5.5</div>
+        <div class="track"><div class="bar" style="width:100.00%"></div></div>
+        <div class="value">$22.34<span>15.4M tokens</span></div>
+      </div>
+      <div class="row">
+        <div class="label">GPT-6.2 Astra</div>
+        <div class="track"><div class="bar" style="width:45.57%"></div></div>
+        <div class="value">$10.18<span>3.0M tokens</span></div>
+      </div>
+      <div class="row mine">
+        <div class="label">Legal Model Router</div>
+        <div class="track"><div class="bar" style="width:43.21%"></div></div>
+        <div class="value">$9.65<span>7.7M tokens</span></div>
+      </div>
+  </div>
+  <footer>195 legal requests at Vals Legal Index prices, 19 Nov 2026. Bespoke drafting still goes to Opus 5.5.</footer>
+</body>
+</html>

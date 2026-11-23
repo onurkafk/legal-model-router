@@ -18,6 +18,11 @@ One OpenRouter key. One command: `/legal-router` in Claude Code. Zero data reten
 
 ## What it saves
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/savings-dark.png">
+  <img alt="Average cost per legal task: Claude Opus 5.5 $22.34, GPT-6.2 Astra $10.18, Legal Model Router $9.65" src="docs/assets/savings-light.png" width="720">
+</picture>
+
 195 legal requests (research, contracts, filings, reviews, extractions, summaries, translations, admin),
 each priced at the Vals Legal Index cost of the model it was sent to:
 
