@@ -121,9 +121,10 @@ class Route:
     line: str
     why: str
     work: Work | None = field(default=None, compare=False)
+    reason: str = ""               # the rule's one-line reason, for footers and headers
 
     def public(self) -> dict:
-        return {"model": self.model, "pick": self.pick, "line": self.line, "why": self.why,
+        return {"model": self.model, "pick": self.pick, "line": self.line, "reason": self.reason, "why": self.why,
                 "classifier": self.work.classifier if self.work else None}
 
 
@@ -191,7 +192,7 @@ def route(work: Work | None, *, sent_back: bool = False, best: bool = False, tab
             line = rule.get("row") or (work.line if work else "overall")
             chosen = table["rows"][line][pick]["model"]
             return Route(model=chosen, effort=table["models"][chosen]["effort"], pick=pick, line=line,
-                         why=rule["why"], work=work)
+                         why=rule["why"], work=work, reason=rule.get("short", ""))
     raise RouterError("no routing rule matched; the table must end with a catch-all rule")
 
 

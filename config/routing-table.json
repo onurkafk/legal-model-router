@@ -77,6 +77,9 @@
   "trusts_estates_private_client": "wills_estates_trusts",
   "white_collar_defense_investigations": "criminal",
   "tax": "tax_agent_bench",
+  "personal_injury_negligence": "civil_negligence",
+  "family_law": "family",
+  "criminal_defense": "criminal",
   "other": "overall"
  },
  "classifiers": {
@@ -90,6 +93,7 @@
    "when": {
     "sent_back": true
    },
+   "short": "sent back by the lawyer",
    "pick": "escalated",
    "why": "A lawyer rejected the output; no benchmark average outweighs that."
   },
@@ -98,6 +102,7 @@
     "classifier": "unavailable"
    },
    "row": "overall",
+   "short": "decision model unavailable, safe route",
    "pick": "best",
    "why": "Nothing is known about the request, so take the overall #1."
   },
@@ -106,6 +111,7 @@
     "section_confidence_below": 0.7
    },
    "row": "overall",
+   "short": "kind of work unclear, safe route",
    "pick": "best",
    "why": "The kind of work is unsettled; a wrong guess could send law-dependent work cheap."
   },
@@ -115,8 +121,9 @@
    },
    "unless": {
     "drafting_complexity": "standard_form",
-    "probability_at_least": 0.7
+    "probability_at_least": 0.8
    },
+   "short": "bespoke drafting",
    "pick": "escalated",
    "why": "A bespoke document drafted from nothing goes to Claude Opus 5.5 (operator decision, 2026-11-23). No Vals board measures drafting from nothing; on legalbenchmarks.ai contract work (Nov 2026) Opus 5.5 is joint #1 (48.4% of tasks, 91.7% of criteria) and Gemini 4 Argon, #3 on Vals Business & Commercial, passes 25.8%."
   },
@@ -127,8 +134,9 @@
    "unless": {
     "work_type": "new_drafting",
     "drafting_complexity": "standard_form",
-    "probability_at_least": 0.7
+    "probability_at_least": 0.8
    },
+   "short": "the work turns on the law",
    "pick": "best",
    "why": "The model must supply the law or design a bespoke document. Measured: 31/31 recall on the fresh holdout."
   },
@@ -136,6 +144,7 @@
    "when": {
     "work_type": "new_drafting"
    },
+   "short": "standard-form drafting",
    "pick": "efficient",
    "why": "An NDA, power of attorney or board resolution from a few facts. 0/13 bespoke drafts were let through."
   },
@@ -147,6 +156,7 @@
      "translation"
     ]
    },
+   "short": "extraction, summary or translation of supplied text",
    "pick": "economy",
    "why": "Bounded by text already in the prompt; the model does not have to know any law."
   },
@@ -155,11 +165,13 @@
     "work_type": "not_legal_work"
    },
    "row": "overall",
+   "short": "admin, not legal work",
    "pick": "economy",
    "why": "Scheduling, billing and other admin."
   },
   {
    "when": {},
+   "short": "work on supplied material",
    "pick": "efficient",
    "why": "Work from supplied material, checked against that material."
   }

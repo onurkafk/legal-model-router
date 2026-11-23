@@ -1,6 +1,6 @@
 # Legal Model Router
 
-**Cut your legal AI bill by 65%. Keep the flagship model for the work that needs it.**
+**Cut your legal AI bill by 63%. Keep the flagship model for the work that needs it.**
 
 Most teams send every legal task to one premium model: the NDA, the lease summary, the share purchase
 agreement and the billing question all at the same price. The Legal Model Router reads each request, works
@@ -23,7 +23,7 @@ One OpenRouter key. One command: `/legal-router` in Claude Code. Zero data reten
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/savings-dark.png">
-  <img alt="Average cost per legal task: Claude Opus 5.5 $22.20, GPT-6.2 Astra $10.11, Legal Model Router $7.81" src="docs/assets/savings-light.png" width="720">
+  <img alt="Average cost per legal task: Claude Opus 5.5 $22.29, GPT-6.2 Astra $10.17, Legal Model Router $8.27" src="docs/assets/savings-light.png" width="720">
 </picture>
 
 195 legal requests (research, contracts, filings, reviews, extractions, summaries, translations, admin),
@@ -31,13 +31,13 @@ each read by d1-ultra and priced at the Vals Legal Index cost of the model it wa
 
 | Sending every request to | Cost per task | Tokens per task | The router costs |
 |---|---|---|---|
-| Claude Opus 5.5 | $22.20 | 15.4M | **65% less, with less than half the tokens** |
-| GPT-6.2 Astra | $10.11 | 3.0M | **23% less** |
-| **Legal Model Router** | **$7.81** | 6.8M | |
+| Claude Opus 5.5 | $22.29 | 15.4M | **63% less, with less than half the tokens** |
+| GPT-6.2 Astra | $10.17 | 3.0M | **19% less** |
+| **Legal Model Router** | **$8.27** | 7.0M | |
 
-- **$14,390 saved on every 1,000 tasks** against an all-Opus 5.5 setup.
+- **$14,020 saved on every 1,000 tasks** against an all-Opus 5.5 setup.
 - **Research and advice cost 70% less** than on Opus 5.5, on each line's best model that knows the law.
-- **Extraction, summaries, translation and admin cost 78% less** than on Opus 5.5: $4.92 a task against $22.12.
+- **Extraction, summaries, translation and admin cost 78% less** than on Opus 5.5: $4.95 a task against $22.17.
 - **Everything except bespoke drafting costs 73% less than Opus 5.5** and 9% less than Gemini 4 Neon, the
   overall #1, because each line's work goes to that line's best-value model.
 - **Reading a request costs $0.00014** with d1-ultra, nothing with Decider V1.3.
@@ -82,8 +82,9 @@ probability for every option, not just a label:
 - **Drafting complexity:** a standard form (NDA, power of attorney, board resolution) or a bespoke document.
 - **Kind of work:** research, contract review, markup, data extraction, summary or chronology, translation,
   and more.
-- **Practice area:** 26 areas, from M&A and capital markets to immigration and trusts and estates, each
-  mapped to its Vals Legal Index line. Anything it cannot place goes to the Vals overall line.
+- **Practice area:** 29 areas, from M&A and capital markets to personal injury, family and criminal law,
+  each mapped to its Vals Legal Index line (the nine U.S. Census law-office revenue lines). Anything it
+  cannot place goes to the Vals overall line.
 
 The router reads the probabilities and errs toward the stronger model when it is unsure: a request that is
 even 30% likely to need the law or a bespoke draft goes to a top model, and if the kind of work is unclear the request goes to
@@ -212,7 +213,7 @@ curl http://127.0.0.1:8404/v1/chat/completions -H 'Content-Type: application/jso
 }'
 ```
 
-The response headers `X-Legal-Router-Model`, `X-Legal-Router-Pick` and `X-Legal-Router-Line` name the
+The response headers `X-Legal-Router-Model`, `X-Legal-Router-Pick`, `X-Legal-Router-Line` and `X-Legal-Router-Reason` name the
 route. Streaming works. To send an answer back, repeat the conversation with the lawyer's comment as the
 last user message and add `"legal_router": {"sent_back": true}`.
 
@@ -238,7 +239,14 @@ stress set of 116 hard ones (full figures in [`docs/evaluation.md`](docs/evaluat
 - **31 of 31** holdout requests that need the law or a bespoke draft went to a top model.
 - **28 of 28** law-dependent stress requests were caught.
 - **0 of 13** bespoke drafts were sent to a cheaper model.
-- **52 of 195** requests ran on the Economy pick, **30** on Efficient: that is where the money is saved.
+- **57 of 195** requests ran on the Economy pick, **35** on Efficient: that is where the money is saved.
+
+### Tested on real court opinions
+
+Six requests written from real US appellate opinions (Indiana bar fight, Missouri landlord appeal, Montana
+estate, North Dakota DUI defense, Florida divorce, Massachusetts unpaid wages), run end to end. All six went to
+Best and all six answers matched what the court held. Two went further: they cited the later decisions that
+changed the law since the opinion was written. Details in [`docs/evaluation.md`](docs/evaluation.md).
 
 ## Changing the routing
 

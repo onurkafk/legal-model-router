@@ -46,8 +46,11 @@
     "real_estate": "Property sales, leases, zoning, title",
     "structured_finance_securitization": "ABS, CLOs, securitisation, pooling and servicing",
     "tax": "Tax liability, structuring, controversy",
-    "trusts_estates_private_client": "Wills, trusts, estate planning, family law",
+    "trusts_estates_private_client": "Wills, trusts, estate planning, probate, estate administration",
     "white_collar_defense_investigations": "Criminal and regulatory investigations, DPAs, internal investigations",
+    "personal_injury_negligence": "Personal injury and negligence: accidents, premises liability, malpractice, product injuries, wrongful death",
+    "family_law": "Family law: divorce, child custody and support, alimony, adoption, prenuptial agreements",
+    "criminal_defense": "Criminal law: arrests, charges, DUI, suppression motions, pleas, trials, sentencing",
     "other": "None of the above"
    }
   },

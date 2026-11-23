@@ -167,3 +167,9 @@ def test_reasoning_that_eats_the_budget_is_an_error_not_an_empty_answer(monkeypa
     monkeypatch.setattr(core.httpx, "Client", lambda **kw: real(transport=httpx.MockTransport(handler)))
     with pytest.raises(core.RouterError, match="output budget reasoning"):
         core.complete("x", key="k", max_tokens=32000)
+
+
+def test_every_rule_has_a_one_line_reason_and_the_route_carries_it():
+    assert all(rule.get("short") for rule in T["rules"])
+    r = route(work(conf=0.5))
+    assert r.reason == "kind of work unclear, safe route" and r.public()["reason"] == r.reason

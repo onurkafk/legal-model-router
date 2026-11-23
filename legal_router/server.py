@@ -57,6 +57,8 @@ def create_app(client: httpx.AsyncClient | None = None, key: str | None = None) 
         r = route(work, sent_back=sent_back, best=best)
         headers = {"X-Legal-Router-Model": r.model, "X-Legal-Router-Pick": r.pick, "X-Legal-Router-Line": r.line,
                    "Cache-Control": "no-store"}
+        if r.reason:
+            headers["X-Legal-Router-Reason"] = r.reason
         if work:
             headers["X-Legal-Router-Classifier"] = work.classifier
         req = upstream.build_request("POST", f"{OPENROUTER}/v1/chat/completions", json=request_body(messages, r, body),

@@ -35,7 +35,8 @@ def run_tool(args: dict) -> str:
         messages.append({"role": "user", "content": "The previous answer was not good enough: " + args["comment"]})
     resp, r = complete(messages, sent_back=bool(args.get("sent_back")), best=bool(args.get("best")))
     answer = (resp.get("choices") or [{}])[0].get("message", {}).get("content") or ""
-    return f"{answer}\n\n— Legal Model Router: {r.model} ({r.pick}, {r.line.replace('_', ' ')})"
+    return (f"{answer}\n\n— Legal Model Router: {r.model} ({r.pick}, {r.line.replace('_', ' ')}). "
+            f"Why: {r.reason or r.why}")
 
 
 def handle(msg: dict) -> dict | None:

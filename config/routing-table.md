@@ -19,8 +19,8 @@ The model that reads each request. Default: `d1-ultra`. Choose another with `--c
 | 1 | sent_back=True | the line | escalated | A lawyer rejected the output; no benchmark average outweighs that. |
 | 2 | classifier=unavailable | overall | best | Nothing is known about the request, so take the overall #1. |
 | 3 | section_confidence_below=0.7 | overall | best | The kind of work is unsettled; a wrong guess could send law-dependent work cheap. |
-| 4 | work_type=new_drafting, unless drafting_complexity=standard_form, probability_at_least=0.7 | the line | escalated | A bespoke document drafted from nothing goes to Claude Opus 5.5 (operator decision, 2026-11-23). No Vals board measures drafting from nothing; on legalbenchmarks.ai contract work (Nov 2026) Opus 5.5 is joint #1 (48.4% of tasks, 91.7% of criteria) and Gemini 4 Argon, #3 on Vals Business & Commercial, passes 25.8%. |
-| 5 | research_or_drafting_at_least=0.3, unless work_type=new_drafting, drafting_complexity=standard_form, probability_at_least=0.7 | the line | best | The model must supply the law or design a bespoke document. Measured: 31/31 recall on the fresh holdout. |
+| 4 | work_type=new_drafting, unless drafting_complexity=standard_form, probability_at_least=0.8 | the line | escalated | A bespoke document drafted from nothing goes to Claude Opus 5.5 (operator decision, 2026-11-23). No Vals board measures drafting from nothing; on legalbenchmarks.ai contract work (Nov 2026) Opus 5.5 is joint #1 (48.4% of tasks, 91.7% of criteria) and Gemini 4 Argon, #3 on Vals Business & Commercial, passes 25.8%. |
+| 5 | research_or_drafting_at_least=0.3, unless work_type=new_drafting, drafting_complexity=standard_form, probability_at_least=0.8 | the line | best | The model must supply the law or design a bespoke document. Measured: 31/31 recall on the fresh holdout. |
 | 6 | work_type=new_drafting | the line | efficient | An NDA, power of attorney or board resolution from a few facts. 0/13 bespoke drafts were let through. |
 | 7 | section=['data_extraction', 'summary_or_chronology', 'translation'] | the line | economy | Bounded by text already in the prompt; the model does not have to know any law. |
 | 8 | work_type=not_legal_work | overall | economy | Scheduling, billing and other admin. |
@@ -77,4 +77,7 @@ Pool = the 5 best allowed models on the row. Best = for work that turns on the l
 | trusts_estates_private_client | Wills, Estates & Trusts |
 | white_collar_defense_investigations | Criminal |
 | tax | Tax |
+| personal_injury_negligence | Civil Negligence |
+| family_law | Family |
+| criminal_defense | Criminal |
 | other | Overall (line unknown) |

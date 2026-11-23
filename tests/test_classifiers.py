@@ -13,9 +13,9 @@ from legal_router.core import CLASSIFIERS, RouterError, Work, classify, resolve_
 ROOT = Path(__file__).resolve().parents[1]
 LABELS = json.loads((ROOT / "docs/data/labels.json").read_text())
 TOP = {"best", "escalated"}
-# A first UK employment contract the client calls "standard stuff": d1-ultra and Decider V1.3 read it as a
-# standard form (0.79, 0.83) and send it to Efficient, about a point behind Best on Labor & Employment.
-STANDARD_BY_ITS_OWN_WORDS = {"holdout:54"}
+# A first UK employment contract the client calls "standard stuff": Decider V1.3 reads it as a standard
+# form (0.83) and sends it to Efficient, about a point behind Best on Labor & Employment.
+STANDARD_BY_ITS_OWN_WORDS = {"decider-v1.3": {"holdout:54"}}
 
 
 def test_default_is_listed_and_every_model_is_named():
@@ -85,6 +85,6 @@ def test_every_model_meets_the_safety_bar_on_the_published_answers(name):
     assert len(needs_top) == 31 + 28
     standard = {k for k, lab in LABELS["drafting"].items() if lab == "standard"}   # meant for Efficient
     missed = [k for k in needs_top if picks[k] not in TOP and k not in standard]
-    assert set(missed) <= STANDARD_BY_ITS_OWN_WORDS and all(picks[k] == "efficient" for k in missed)
+    assert set(missed) <= STANDARD_BY_ITS_OWN_WORDS.get(name, set()) and all(picks[k] == "efficient" for k in missed)
     bespoke = [k for k, lab in LABELS["drafting"].items() if lab == "bespoke"]
     assert len(bespoke) == 13 and [k for k in bespoke if picks[k] not in TOP] == []
