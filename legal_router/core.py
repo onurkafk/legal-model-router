@@ -226,8 +226,30 @@ def complete(request: str | list[dict], *, sent_back: bool = False, best: bool =
     with httpx.Client(timeout=httpx.Timeout(900, connect=10)) as client:
         work = None if sent_back else classify(messages, classifier=classifier, key=key, client=client)
         r = route(work, sent_back=sent_back, best=best)
-        resp = client.post(f"{OPENROUTER}/v1/chat/completions", json=request_body(messages, r, params),
-                           headers={"Authorization": f"Bearer {api_key(key)}"})
-    if resp.status_code != 200:
-        raise RouterError(f"OpenRouter refused the call to {r.model} ({resp.status_code}): {resp.text[:300]}")
-    return resp.json(), r
+        body = request_body(messages, r, params)
+        for attempt in range(2):     # one retry, only for an empty reply that used no tokens (a provider hiccup)
+            resp = client.post(f"{OPENROUTER}/v1/chat/completions", json=body,
+                               headers={"Authorization": f"Bearer {api_key(key)}"})
+            if resp.status_code != 200:
+                raise RouterError(f"OpenRouter refused the call to {r.model} ({resp.status_code}): {resp.text[:300]}")
+            out = resp.json()
+            if answer_text(out) or (out.get("usage") or {}).get("completion_tokens"):
+                break
+    check_answer(out, r)
+    return out, r
+
+
+def answer_text(resp: dict) -> str:
+    return ((resp.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+
+
+def check_answer(resp: dict, r: Route) -> None:
+    """An empty answer is an error, never a result: say why instead of handing back nothing."""
+    if answer_text(resp):
+        return
+    choice = (resp.get("choices") or [{}])[0]
+    if choice.get("finish_reason") == "length":
+        raise RouterError(f"{r.model} spent its whole output budget reasoning (effort {r.effort}) and wrote no "
+                          "answer. Raise max_tokens or leave it unset.")
+    raise RouterError(f"{r.model} returned an empty answer (finish reason {choice.get('finish_reason')!r}). "
+                      "Try again; the provider may be busy.")

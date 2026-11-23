@@ -137,3 +137,33 @@ def test_standard_form_score_does_not_demote_research():
     """drafting_complexity is asked on every request; it may only matter for new drafting."""
     w = work("research_or_advice", {"research_or_advice": 0.9}, standard=0.95, section="legal_research")
     assert route(w).pick == "best"
+
+
+def test_empty_answer_is_retried_once_then_explained(monkeypatch):
+    calls = []
+
+    def handler(req):
+        if req.url.path.endswith("/alpha/decisions"):
+            return fake_openrouter([])(req)
+        calls.append(1)
+        empty = {"choices": [{"message": {"content": ""}, "finish_reason": "stop"}], "usage": {"completion_tokens": 0}}
+        full = {"choices": [{"message": {"content": "the answer"}, "finish_reason": "stop"}]}
+        return httpx.Response(200, json=empty if len(calls) == 1 else full)
+
+    real = httpx.Client
+    monkeypatch.setattr(core.httpx, "Client", lambda **kw: real(transport=httpx.MockTransport(handler)))
+    resp, _ = core.complete("x", key="k")
+    assert core.answer_text(resp) == "the answer" and len(calls) == 2
+
+
+def test_reasoning_that_eats_the_budget_is_an_error_not_an_empty_answer(monkeypatch):
+    def handler(req):
+        if req.url.path.endswith("/alpha/decisions"):
+            return fake_openrouter([])(req)
+        return httpx.Response(200, json={"choices": [{"message": {"content": None}, "finish_reason": "length"}],
+                                         "usage": {"completion_tokens": 32000}})
+
+    real = httpx.Client
+    monkeypatch.setattr(core.httpx, "Client", lambda **kw: real(transport=httpx.MockTransport(handler)))
+    with pytest.raises(core.RouterError, match="output budget reasoning"):
+        core.complete("x", key="k", max_tokens=32000)
