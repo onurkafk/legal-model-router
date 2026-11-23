@@ -39,14 +39,14 @@ each priced at the Vals Legal Index cost of the model it was sent to:
 - **Classification costs $0.0001 a request.** It pays for itself on the first routed task.
 
 Reproduce it with `uv run python scripts/estimate_savings.py`: no key, no network. Prices are Vals Legal
-Index costs per benchmark task (19 November 2026); your bill scales with the size of your requests.
+Index task prices (19 November 2026); your bill scales with the size of your requests.
 
 ## Why one model is the wrong default
 
 No single model wins legal work. On the Vals Legal Index the leader changes from one area of law to the
 next, and so does the price:
 
-| Vals line | #1 | Score | Cost per test | Claude Opus 5.5 on the same line |
+| Vals line | #1 | Score | Cost per task | Claude Opus 5.5 on the same task |
 |---|---|---|---|---|
 | Real Estate | Gemini 4 Carbon | 97.7 | $7.12 | $24.84 |
 | Labor & Employment | Muse Wonder | 93.1 | $7.28 | $17.13 |
@@ -119,7 +119,7 @@ The router does not trust a single leaderboard. Each source answers a different 
 
 | Source | What it decides |
 |---|---|
-| [Vals Legal Index](https://www.vals.ai) | The main source. Accuracy, cost and tokens per test on 9 practice-area lines and overall. It picks the pool, the #1 and every cheaper rung. |
+| [Vals Legal Index](https://www.vals.ai) | The main source. Accuracy, cost and tokens per task on 9 practice-area lines and overall. It picks the pool, the #1 and every cheaper rung. |
 | [Artificial Analysis](https://artificialanalysis.ai) | The law gate. Best must score at least 55 on legal knowledge and 65 on non-hallucination, so a model that writes well but invents law never handles research. |
 | [legalbenchmarks.ai](https://www.legalbenchmarks.ai) | Contract drafting. No Vals line measures drafting from nothing; here Claude Opus 5.5 is joint #1, which is why bespoke drafting and send-backs go to it. |
 

@@ -92,7 +92,7 @@ top_k: 5                       # the pool: the five best allowed models on the r
 picks:
   best: "for work that turns on the law: among models passing law_gate, the #1 on the row, unless one within best_within_points costs at least best_min_saving less; then the cheapest such model"
   efficient: "cheapest model in the pool within efficient_within_points of #1"
-  economy: "cheapest allowed model within economy_within_points of #1 that uses no more tokens per test than #1 (may be outside the pool). Operator, 2026-11-23: keeps the token-heavy Gemini 4 Hydrogen (8.3M) off cheap work; pure fewest-tokens cost up to 2.5x more"
+  economy: "cheapest allowed model within economy_within_points of #1 that uses no more tokens per task than #1 (may be outside the pool). Operator, 2026-11-23: keeps the token-heavy Gemini 4 Hydrogen (8.3M) off cheap work; pure fewest-tokens cost up to 2.5x more"
   escalated: "always escalation_model"
 # Best is used for research, advice and anything the router is unsure about, so the model must
 # know the law. Vals cannot say that on every line: Real Estate, Labor & Employment and Wills are
@@ -103,7 +103,7 @@ law_gate:
   min_legal_knowledge: 55      # Artificial Analysis Legal Knowledge (AA-Omniscience law accuracy)
   min_non_hallucination: 65    # Artificial Analysis Non-Hallucination: does not invent law
 best_within_points: 2.0       # operator, 2026-11-23: 1-2 points behind #1 and much cheaper -> use it
-best_min_saving: 0.25         # "much cheaper": at least 25% less per test than #1
+best_min_saving: 0.25         # "much cheaper": at least 25% less per task than #1
 efficient_within_points: 3.0   # a few points do not matter, but more than this does
 economy_within_points: 8.0
 escalation_model: anthropic/claude-opus-5-5   # operator decision, 2026-11-23: always Opus 5.5

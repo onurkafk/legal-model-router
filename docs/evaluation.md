@@ -43,7 +43,7 @@ consulting agreement), as intended.
 
 ## What it costs
 
-The same 195 routed requests, each priced at the Vals Legal Index cost per test of the model it was sent
+The same 195 routed requests, each priced at the Vals Legal Index cost per task of the model it was sent
 to, on its own Vals line (`scripts/estimate_savings.py`, using `docs/data/classifier-answers.jsonl`: the
 classifier's answers only, no request text):
 
