@@ -30,8 +30,7 @@ THEMES = {
 def page(theme: str) -> str:
     e = estimate()
     cost, tokens = e['cost'], e['tokens']
-    ours, top = cost['Legal Model Router'], max(cost[b] for b in BARS)
-    saving = 1 - ours / cost['Claude Opus 5.5']
+    top = max(cost[b] for b in BARS)
     t = THEMES[theme]
     rows = []
     for name in BARS:
@@ -72,7 +71,7 @@ def page(theme: str) -> str:
 </head>
 <body>
   <div class="eyebrow">Average cost per legal task</div>
-  <h1>{saving:.0%} less than Claude Opus 5.5</h1>
+  <h1>Nearly half the cost of Claude Opus 5.5</h1>
   <div class="chart">{''.join(rows)}
   </div>
   <footer>{e['requests']} legal requests read by d1-ultra, at Vals Legal Index prices (19 Nov 2026). Bespoke drafting still goes to Opus 5.5.</footer>

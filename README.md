@@ -1,6 +1,6 @@
 # Legal Model Router
 
-**Cut your legal AI bill by 63%. Keep the flagship model for the work that needs it.**
+**Cut your legal AI bill nearly in half. Keep the flagship model for the work that needs it.**
 
 Most teams send every legal task to one premium model: the NDA, the lease summary, the share purchase
 agreement and the billing question all at the same price. The Legal Model Router reads each request, works
@@ -13,34 +13,35 @@ d1-ultra (100%) by default, Decider V1.3 (99.8%, free) or Elephant-1 if you pref
 
 One OpenRouter key. One command: `/legal-router` in Claude Code. Zero data retention on every call.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/onurkafk/legal-model-router/blob/main/LICENSE)
 ![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 ![Zero data retention](https://img.shields.io/badge/OpenRouter-zero%20data%20retention-green.svg)
 
 ---
 
-## The same legal work for 63% less
+## The same legal work for nearly half the price
 
 We wrote 195 realistic legal requests, from research questions and contract drafts to reviews, extractions,
 translations and billing questions. Then we priced each one twice: on the model the router chose, and on
 Claude Opus 5.5 for everything.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/savings-dark.png">
-  <img alt="Average cost per legal task: Claude Opus 5.5 $22.29, GPT-6.2 Astra $10.17, Legal Model Router $8.27" src="docs/assets/savings-light.png" width="720">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/onurkafk/legal-model-router/main/docs/assets/savings-dark.png">
+  <img alt="Average cost per legal task: Claude Opus 5.5 $22.29, GPT-6.2 Astra $10.17, Legal Model Router $8.27" src="https://raw.githubusercontent.com/onurkafk/legal-model-router/main/docs/assets/savings-light.png" width="720">
 </picture>
 
-An average task costs **$8.27 instead of $22.29**, and uses less than half the tokens. That is **$14,020
-saved on every 1,000 tasks**. The router also beats running everything on GPT-6.2 Astra, by 19%.
+On these requests the router cost **$8.27 a task against $22.29**. We promise less than that, **nearly half
+off**, because your bill depends on your own mix of work and the size of your documents. The router also
+came out cheaper than running everything on GPT-6.2 Astra.
 
 The savings come from routine work. The work that needs the strongest model still gets it:
 
-| Kind of work | Share of requests | Goes to | Cost against Opus 5.5 |
-|---|---|---|---|
-| Research and advice: anything that turns on the law | 40% | The line's best model that knows the law | **70% less** |
-| Review and markup of supplied text, standard-form drafting | 18% | A top-5 model within 3 points of #1 | **71% less** |
-| Extraction, summaries, translation, admin | 29% | The cheapest strong model | **78% less** |
-| Bespoke drafting | 13% | Claude Opus 5.5 | same |
+| Kind of work | Share of requests | Goes to |
+|---|---|---|
+| Research and advice: anything that turns on the law | 40% | The line's best model that knows the law |
+| Review and markup of supplied text, standard-form drafting | 18% | A top-5 model within 3 points of #1 |
+| Extraction, summaries, translation, admin | 29% | The cheapest strong model |
+| Bespoke drafting | 13% | Claude Opus 5.5, at the same price as today |
 
 Reading each request first costs $0.00014 with d1-ultra, and nothing with Decider V1.3. Prices are Vals Legal
 Index task prices (19 November 2026); your bill scales with the size of your requests. Check every figure
@@ -101,7 +102,7 @@ the overall #1. If the decision model cannot answer at all, the request still ru
 
 All three send every law-dependent request and every bespoke draft in our test sets to a top model. Pick one with
 `legal-router init`, `--classifier NAME`, `LEGAL_ROUTER_CLASSIFIER`, or the plugin's "Decision model"
-setting. Only measured models are accepted; [`docs/evaluation.md`](docs/evaluation.md) has the comparison.
+setting. Only measured models are accepted; [`docs/evaluation.md`](https://github.com/onurkafk/legal-model-router/blob/main/docs/evaluation.md) has the comparison.
 
 #### Long requests
 
@@ -119,9 +120,9 @@ Each Vals line has four picks, rebuilt from the benchmark data by one script:
 | **Economy** | Extraction, summaries, chronologies, translation, admin | The cheapest model within 8 points of #1 that uses no more tokens than #1, and never dearer than Best |
 | **Escalated** | Bespoke drafting from scratch, and every send-back | Claude Opus 5.5 |
 
-The rules live in one readable file, [`config/routing-policy.yaml`](config/routing-policy.yaml). The full
+The rules live in one readable file, [`config/routing-policy.yaml`](https://github.com/onurkafk/legal-model-router/blob/main/config/routing-policy.yaml). The full
 table they produce, with every score, cost and token count, is in
-[`config/routing-table.md`](config/routing-table.md).
+[`config/routing-table.md`](https://github.com/onurkafk/legal-model-router/blob/main/config/routing-table.md).
 
 ### 3. Work: the call
 
@@ -235,7 +236,7 @@ The key comes from the `key=` argument, then `OPENROUTER_API_KEY`, then `legal-r
 ## Cheap where it can be, never where it matters
 
 The savings come without sending law-dependent work down. On a fresh holdout of 55 legal requests and a
-stress set of 116 hard ones (full figures in [`docs/evaluation.md`](docs/evaluation.md)):
+stress set of 116 hard ones (full figures in [`docs/evaluation.md`](https://github.com/onurkafk/legal-model-router/blob/main/docs/evaluation.md)):
 
 - **31 of 31** holdout requests that need the law or a bespoke draft went to a top model.
 - **28 of 28** law-dependent stress requests were caught.
@@ -247,11 +248,11 @@ stress set of 116 hard ones (full figures in [`docs/evaluation.md`](docs/evaluat
 Six requests written from real US appellate opinions (Indiana bar fight, Missouri landlord appeal, Montana
 estate, North Dakota DUI defense, Florida divorce, Massachusetts unpaid wages), run end to end. All six went to
 Best and all six answers matched what the court held. Two went further: they cited the later decisions that
-changed the law since the opinion was written. Details in [`docs/evaluation.md`](docs/evaluation.md).
+changed the law since the opinion was written. Details in [`docs/evaluation.md`](https://github.com/onurkafk/legal-model-router/blob/main/docs/evaluation.md).
 
 ## Changing the routing
 
-The policy is yours to change. Edit [`config/routing-policy.yaml`](config/routing-policy.yaml) (which
+The policy is yours to change. Edit [`config/routing-policy.yaml`](https://github.com/onurkafk/legal-model-router/blob/main/config/routing-policy.yaml) (which
 models are allowed, the thresholds, the rules) or refresh the benchmark snapshots in
 [`benchmarks/`](benchmarks), then rebuild:
 
@@ -272,5 +273,5 @@ uv run pytest
 
 ## License
 
-[MIT](LICENSE). Benchmark figures belong to their publishers: Vals AI, Artificial Analysis and
+[MIT](https://github.com/onurkafk/legal-model-router/blob/main/LICENSE). Benchmark figures belong to their publishers: Vals AI, Artificial Analysis and
 legalbenchmarks.ai. The router picks models; a lawyer signs off the work.
