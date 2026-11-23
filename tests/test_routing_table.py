@@ -57,3 +57,8 @@ def test_economy_is_cheapest_near_the_top_without_more_tokens_than_it():
               and tokens[m] <= tokens[row['top']['vals_id']]]
         assert row['economy']['cost_per_test'] == round(min(vals[name][m]['cost_per_test'] for m in ok), 2), name
         assert row['economy']['model'] != 'google/gemini-4-hydrogen'
+
+
+def test_savings_estimate_runs_offline():
+    r = subprocess.run([sys.executable, 'scripts/estimate_savings.py'], cwd=ROOT, capture_output=True, text=True)
+    assert r.returncode == 0 and '195 requests' in r.stdout, r.stdout + r.stderr

@@ -1,36 +1,56 @@
 # Legal Model Router
 
-**The right model for every piece of legal work, chosen by the benchmarks and not by brand.**
+**Cut your legal AI bill by 57%. Keep the flagship model for the work that needs it.**
 
-The Legal Model Router reads a legal request, works out what kind of work it is and which area of law it
-belongs to, and sends it to the model that leads the [Vals Legal Index](https://www.vals.ai) for that
-work at a sensible price. It is one OpenRouter key and one command: `/legal-router` in Claude Code, a
-local OpenAI-compatible endpoint, or three Python functions. Every call runs on zero-data-retention
-endpoints.
+Most teams send every legal task to one premium model: the NDA, the lease summary, the share purchase
+agreement and the billing question all at the same price. The Legal Model Router reads each request, works
+out what kind of work it is and which area of law it belongs to, and sends it to the model that leads the
+[Vals Legal Index](https://www.vals.ai) for that work, at that work's price. Bespoke drafting still goes to
+Claude Opus 5.5. Everything else stops paying Opus prices.
+
+One OpenRouter key. One command: `/legal-router` in Claude Code. Zero data retention on every call.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 ![Zero data retention](https://img.shields.io/badge/OpenRouter-zero%20data%20retention-green.svg)
 
-> This routes *models*. It is not legal advice and does not replace a lawyer's review of the output.
-
 ---
 
-## Why route at all
+## What it saves
 
-No single model wins legal work. On the Vals Legal Index (19 November 2026) the leader changes from one
-area of law to the next, and so does the price:
+195 legal requests (research, contracts, filings, reviews, extractions, summaries, translations, admin),
+each priced at the Vals Legal Index cost of the model it was sent to:
 
-| Vals line | #1 | Score | Cost per test |
+| Sending every request to | Cost per task | Tokens per task | The router costs |
 |---|---|---|---|
-| Real Estate | Gemini 4 Carbon | 97.7 | $7.12 |
-| Labor & Employment | Muse Wonder | 93.1 | $7.28 |
-| Tax | Gemini 4 Neon | 79.8 | $4.95 |
-| Civil Negligence | Gemini 4 Argon | 74.0 | $9.09 |
-| Family | Gemini 4 Carbon | 45.5 | $12.65 |
+| Claude Opus 5.5 | $22.34 | 15.4M | **57% less, with half the tokens** |
+| GPT-6.2 Astra | $10.18 | 3.0M | **5% less** |
+| **Legal Model Router** | **$9.65** | 7.7M | |
 
-Sending everything to one flagship model wastes money on routine work. Sending everything to a cheap
-model risks the matters that turn on the law. The router tells the two apart, request by request.
+- **$12,690 saved on every 1,000 tasks** against an all-Opus 5.5 setup.
+- **Extraction, summaries, translation and admin cost 77% less** than on Opus 5.5: $5.13 a task against $21.88.
+- **Everything except bespoke drafting costs 72% less than Opus 5.5** and 8% less than Gemini 4 Neon, the
+  overall #1, because each line's work goes to that line's best-value model.
+- **Classification costs $0.0001 a request.** It pays for itself on the first routed task.
+
+Reproduce it with `uv run python scripts/estimate_savings.py`: no key, no network. Prices are Vals Legal
+Index costs per benchmark task (19 November 2026); your bill scales with the size of your requests.
+
+## Why one model is the wrong default
+
+No single model wins legal work. On the Vals Legal Index the leader changes from one area of law to the
+next, and so does the price:
+
+| Vals line | #1 | Score | Cost per test | Claude Opus 5.5 on the same line |
+|---|---|---|---|---|
+| Real Estate | Gemini 4 Carbon | 97.7 | $7.12 | $24.84 |
+| Labor & Employment | Muse Wonder | 93.1 | $7.28 | $17.13 |
+| Tax | Gemini 4 Neon | 79.8 | $4.95 | $14.40 |
+| Civil Negligence | Gemini 4 Argon | 74.0 | $9.09 | $24.34 |
+| Family | Gemini 4 Carbon | 45.5 | $12.65 | $25.84 |
+
+A single premium model overpays on routine work. A single cheap model fails the matters that turn on the
+law. The router tells the two apart, request by request.
 
 ## How it works
 
@@ -187,18 +207,15 @@ print(r.model, r.pick, r.line)
 
 The key comes from the `key=` argument, then `OPENROUTER_API_KEY`, then `legal-router init`'s file.
 
-## Measured, not assumed
+## Cheap where it can be, never where it matters
 
-The classifier and the routing rules were tested on a fresh holdout of 55 legal requests and a stress
-set of 116 hard ones (full figures in [`docs/evaluation.md`](docs/evaluation.md)):
+The savings come without sending law-dependent work down. On a fresh holdout of 55 legal requests and a
+stress set of 116 hard ones (full figures in [`docs/evaluation.md`](docs/evaluation.md)):
 
 - **31 of 31** holdout requests that need the law or a bespoke draft went to a top model.
 - **28 of 28** law-dependent stress requests were caught.
 - **0 of 13** bespoke drafts were sent to a cheaper model.
-- Classification costs about **$0.0001** per request.
-
-The test labels were written by Claude, not by a lawyer. Treat the figures as evidence that the rules do
-what they say, not as a guarantee about your matters.
+- **52 of 195** requests ran on the Economy pick, **30** on Efficient: that is where the money is saved.
 
 ## Changing the routing
 
@@ -224,4 +241,4 @@ uv run pytest
 ## License
 
 [MIT](LICENSE). Benchmark figures belong to their publishers: Vals AI, Artificial Analysis and
-legalbenchmarks.ai.
+legalbenchmarks.ai. The router picks models; a lawyer signs off the work.

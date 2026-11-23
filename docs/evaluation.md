@@ -41,6 +41,24 @@ Replaying the stored classifier answers through the current rules:
 The only drafting requests routed below Best or Opus 5.5 are standard forms (NDA, simple will,
 consulting agreement), as intended.
 
+## What it costs
+
+The same 195 routed requests, each priced at the Vals Legal Index cost per test of the model it was sent
+to, on its own Vals line (`scripts/estimate_savings.py`, using `docs/data/classifier-answers.jsonl`: the
+classifier's answers only, no request text):
+
+| Sending every request to | Cost per task | Tokens per task | Router saves |
+|---|---|---|---|
+| Claude Opus 5.5 | $22.34 | 15.42M | 57% |
+| GPT-6.2 Astra | $10.18 | 3.03M | 5% |
+| Gemini 4 Neon | $6.74 | 5.99M | -43% |
+| Legal Model Router | $9.65 | 7.73M | |
+
+Without the 40 bespoke drafts it sends to Opus 5.5 by design, the router costs 72% less than Opus 5.5,
+39% less than GPT-6.2 Astra and 8% less than Gemini 4 Neon. Escalating bespoke drafting to Opus 5.5 is
+the one place it pays more than the cheapest flagship, and it is a policy choice in
+`config/routing-policy.yaml`.
+
 ## Long requests
 
 A long contract pasted into a request is the common case. The classifier is shown the first and last
