@@ -1,0 +1,15 @@
+{
+  "name": "legal-router",
+  "owner": {
+    "name": "onurkafk",
+    "url": "https://github.com/onurkafk"
+  },
+  "description": "Legal Model Router: route legal work to the best model for it, from the Vals Legal Index, with zero data retention.",
+  "plugins": [
+    {
+      "name": "legal-router",
+      "source": "./",
+      "description": "Route legal work to the best model for it, from the Vals Legal Index."
+    }
+  ]
+}

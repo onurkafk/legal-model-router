@@ -1,0 +1,27 @@
+{
+  "name": "legal-router",
+  "version": "0.2.0",
+  "description": "Legal Model Router: sends each piece of legal work to the model best suited to it (Vals Legal Index), through OpenRouter with zero data retention. Say 'not good enough' to send an answer back to Claude Opus 5.5.",
+  "author": {
+    "name": "onurkafk",
+    "url": "https://github.com/onurkafk"
+  },
+  "homepage": "https://github.com/onurkafk/legal-model-router",
+  "repository": "https://github.com/onurkafk/legal-model-router",
+  "license": "MIT",
+  "keywords": [
+    "legal",
+    "router",
+    "openrouter",
+    "vals"
+  ],
+  "userConfig": {
+    "openrouter_api_key": {
+      "type": "string",
+      "title": "OpenRouter API key",
+      "description": "Used for the classifier and the model that does the work. Stored in your OS credential store.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

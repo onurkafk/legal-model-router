@@ -1,0 +1,3592 @@
+{
+ "source": "https://www.vals.ai/benchmarks/legal_index",
+ "retrieved": "2026-11-23",
+ "benchmark_updated": "2026-11-19",
+ "note": "Vals Legal Index per-line results, decoded from the props of the page's own chart component. Lines are the nine Census law-office revenue lines; overall is the revenue-weighted index. google/cobalt-c-high-1p00 is Vals' id for Gemini 4 Neon (its model page is google_gemini-4-neon). tokens_per_test = avg_input_tokens + avg_output_tokens (cache reads included), the \"Tokens / Test\" column Vals publishes. Vals publishes it for the overall index only, so it is stored there only and stands for the model on every line.",
+ "lines": {
+  "overall": {
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 78.359,
+    "stderr": 1.835,
+    "cost_per_test": 6.095992,
+    "latency": 1633.773,
+    "reasoning_effort": "xhigh",
+    "provider": "Google",
+    "tokens_per_test": 5989940
+   },
+   "meta/muse-wonder-full": {
+    "accuracy": 77.863,
+    "stderr": 1.822,
+    "cost_per_test": 3.718745,
+    "latency": 1796.016,
+    "reasoning_effort": "max",
+    "provider": "Meta",
+    "tokens_per_test": 5499471
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 76.779,
+    "stderr": 1.842,
+    "cost_per_test": 6.823695,
+    "latency": 1540.692,
+    "reasoning_effort": "high",
+    "provider": "Google",
+    "tokens_per_test": 4332200
+   },
+   "google/gemini-4-carbon": {
+    "accuracy": 75.93,
+    "stderr": 1.849,
+    "cost_per_test": 7.199786,
+    "latency": 2306.554,
+    "reasoning_effort": "high",
+    "provider": "Google",
+    "tokens_per_test": 5220413
+   },
+   "meta/muse-ember": {
+    "accuracy": 75.686,
+    "stderr": 1.84,
+    "cost_per_test": 0.068939,
+    "latency": 217.157,
+    "reasoning_effort": "max",
+    "provider": "Meta",
+    "tokens_per_test": 4084740
+   },
+   "meta/muse-wonder": {
+    "accuracy": 75.259,
+    "stderr": 1.834,
+    "cost_per_test": 4.315556,
+    "latency": 775.365,
+    "reasoning_effort": "max",
+    "provider": "Meta",
+    "tokens_per_test": 5569948
+   },
+   "zai/glm-5.3": {
+    "accuracy": 74.623,
+    "stderr": 1.841,
+    "cost_per_test": 2.676711,
+    "latency": 2691.371,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI",
+    "tokens_per_test": 5168941
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 73.901,
+    "stderr": 1.848,
+    "cost_per_test": 4.246502,
+    "latency": 5277.128,
+    "reasoning_effort": null,
+    "provider": "Alibaba",
+    "tokens_per_test": 7815675
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 73.889,
+    "stderr": 1.831,
+    "cost_per_test": 0.555946,
+    "latency": 813.38,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines",
+    "tokens_per_test": 12171813
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 73.629,
+    "stderr": 1.846,
+    "cost_per_test": 4.47377,
+    "latency": 1267.201,
+    "reasoning_effort": "xhigh",
+    "provider": "Google",
+    "tokens_per_test": 8279235
+   },
+   "grok/grok-4.7": {
+    "accuracy": 72.672,
+    "stderr": 1.819,
+    "cost_per_test": 5.821203,
+    "latency": 1473.078,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI",
+    "tokens_per_test": 4369295
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 72.369,
+    "stderr": 1.841,
+    "cost_per_test": 19.94159,
+    "latency": 4756.502,
+    "reasoning_effort": null,
+    "provider": "Anthropic",
+    "tokens_per_test": 15419447
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 72.141,
+    "stderr": 1.829,
+    "cost_per_test": 0.177374,
+    "latency": 1741.955,
+    "reasoning_effort": null,
+    "provider": "Xiaomi",
+    "tokens_per_test": 2475131
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 71.863,
+    "stderr": 1.822,
+    "cost_per_test": 0.590203,
+    "latency": 1566.474,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek",
+    "tokens_per_test": 20222391
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 71.722,
+    "stderr": 1.805,
+    "cost_per_test": 3.467957,
+    "latency": 1910.528,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI",
+    "tokens_per_test": 4390087
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 71.699,
+    "stderr": 1.839,
+    "cost_per_test": 0.805143,
+    "latency": 2764.291,
+    "reasoning_effort": null,
+    "provider": "Tencent",
+    "tokens_per_test": 4794972
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 71.051,
+    "stderr": 1.832,
+    "cost_per_test": 0.233899,
+    "latency": 1703.112,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI",
+    "tokens_per_test": 4296883
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 70.713,
+    "stderr": 1.754,
+    "cost_per_test": 5.498069,
+    "latency": 3121.644,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba",
+    "tokens_per_test": 11847615
+   },
+   "tencent/hy4": {
+    "accuracy": 70.552,
+    "stderr": 1.814,
+    "cost_per_test": 1.649017,
+    "latency": 3476.624,
+    "reasoning_effort": null,
+    "provider": "Tencent",
+    "tokens_per_test": 7965356
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 70.294,
+    "stderr": 1.827,
+    "cost_per_test": 2.358647,
+    "latency": 3524.749,
+    "reasoning_effort": null,
+    "provider": "Anthropic",
+    "tokens_per_test": 18534916
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 70.162,
+    "stderr": 1.785,
+    "cost_per_test": 0.839695,
+    "latency": 1483.391,
+    "reasoning_effort": null,
+    "provider": "Stepfun",
+    "tokens_per_test": 6006092
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 69.784,
+    "stderr": 1.784,
+    "cost_per_test": 2.047973,
+    "latency": 554.787,
+    "reasoning_effort": "high",
+    "provider": "Google",
+    "tokens_per_test": 5044619
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 69.681,
+    "stderr": 1.727,
+    "cost_per_test": 9.353236,
+    "latency": 3818.776,
+    "reasoning_effort": "max",
+    "provider": "OpenAI",
+    "tokens_per_test": 3032889
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 69.175,
+    "stderr": 1.813,
+    "cost_per_test": 8.877409,
+    "latency": 890.047,
+    "reasoning_effort": null,
+    "provider": "Anthropic",
+    "tokens_per_test": 5596337
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 69.012,
+    "stderr": 1.772,
+    "cost_per_test": 0.873088,
+    "latency": 1593.115,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek",
+    "tokens_per_test": 3186139
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 68.99,
+    "stderr": 1.774,
+    "cost_per_test": 0.068351,
+    "latency": 1100.393,
+    "reasoning_effort": null,
+    "provider": "Xiaomi",
+    "tokens_per_test": 3641048
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 68.718,
+    "stderr": 1.772,
+    "cost_per_test": 2.748155,
+    "latency": 1899.994,
+    "reasoning_effort": "max",
+    "provider": "OpenAI",
+    "tokens_per_test": 4283052
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 68.512,
+    "stderr": 1.764,
+    "cost_per_test": 5.358181,
+    "latency": 5606.844,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI",
+    "tokens_per_test": 10321772
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 68.386,
+    "stderr": 1.742,
+    "cost_per_test": 13.944579,
+    "latency": 1448.429,
+    "reasoning_effort": "max",
+    "provider": "OpenAI",
+    "tokens_per_test": 4390957
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 68.302,
+    "stderr": 1.795,
+    "cost_per_test": 0.048331,
+    "latency": 518.478,
+    "reasoning_effort": null,
+    "provider": "Openrouter",
+    "tokens_per_test": 3021452
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 68.021,
+    "stderr": 1.811,
+    "cost_per_test": 13.368966,
+    "latency": 4515.828,
+    "reasoning_effort": null,
+    "provider": "Anthropic",
+    "tokens_per_test": 28188699
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 67.838,
+    "stderr": 1.704,
+    "cost_per_test": 0.775604,
+    "latency": 1138.699,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI",
+    "tokens_per_test": 3080221
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 67.069,
+    "stderr": 1.778,
+    "cost_per_test": 0.412858,
+    "latency": 2124.118,
+    "reasoning_effort": null,
+    "provider": "MiniMax",
+    "tokens_per_test": 10852010
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 67.041,
+    "stderr": 1.652,
+    "cost_per_test": 6.626537,
+    "latency": 4709.782,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI",
+    "tokens_per_test": 13741092
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 66.675,
+    "stderr": 1.672,
+    "cost_per_test": 2.804642,
+    "latency": 2791.204,
+    "reasoning_effort": "max",
+    "provider": "OpenAI",
+    "tokens_per_test": 3106582
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 65.613,
+    "stderr": 1.625,
+    "cost_per_test": 2.22271,
+    "latency": 4164.363,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI",
+    "tokens_per_test": 5764732
+   },
+   "inception/mercury-3": {
+    "accuracy": 62.963,
+    "stderr": 1.62,
+    "cost_per_test": 0.102787,
+    "latency": 534.224,
+    "reasoning_effort": "high",
+    "provider": "Inception",
+    "tokens_per_test": 2532950
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 62.203,
+    "stderr": 1.571,
+    "cost_per_test": 0.309757,
+    "latency": 1949.657,
+    "reasoning_effort": "max",
+    "provider": "OpenAI",
+    "tokens_per_test": 6514386
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 61.799,
+    "stderr": 1.613,
+    "cost_per_test": null,
+    "latency": 89.813,
+    "reasoning_effort": null,
+    "provider": "Reflection",
+    "tokens_per_test": 2350101
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 58.757,
+    "stderr": 1.36,
+    "cost_per_test": 2.286035,
+    "latency": 2591.861,
+    "reasoning_effort": "max",
+    "provider": "OpenAI",
+    "tokens_per_test": 5600594
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 57.83,
+    "stderr": 1.701,
+    "cost_per_test": 0.137335,
+    "latency": 538.447,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines",
+    "tokens_per_test": 1125676
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 55.767,
+    "stderr": 1.084,
+    "cost_per_test": 0.526647,
+    "latency": 721.634,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines",
+    "tokens_per_test": 15054123
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 55.366,
+    "stderr": 1.248,
+    "cost_per_test": 0.161104,
+    "latency": 109.247,
+    "reasoning_effort": "high",
+    "provider": "Baseten",
+    "tokens_per_test": 1925782
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 54.16,
+    "stderr": 1.659,
+    "cost_per_test": 0.699941,
+    "latency": 736.526,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines",
+    "tokens_per_test": 2234732
+   }
+  },
+  "business_commercial": {
+   "meta/muse-wonder-full": {
+    "accuracy": 77.126,
+    "stderr": 3.809,
+    "cost_per_test": 4.79223,
+    "latency": 2192.144,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 75.637,
+    "stderr": 3.835,
+    "cost_per_test": 7.241057,
+    "latency": 1956.296,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "meta/muse-ember": {
+    "accuracy": 73.346,
+    "stderr": 3.86,
+    "cost_per_test": 0.089802,
+    "latency": 291.638,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 72.438,
+    "stderr": 3.86,
+    "cost_per_test": 5.565663,
+    "latency": 909.632,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 71.466,
+    "stderr": 3.851,
+    "cost_per_test": 9.014202,
+    "latency": 1971.586,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 71.286,
+    "stderr": 3.863,
+    "cost_per_test": 5.107908,
+    "latency": 1489.83,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "google/gemini-4-carbon": {
+    "accuracy": 70.776,
+    "stderr": 3.852,
+    "cost_per_test": 8.488178,
+    "latency": 2713.152,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 70.622,
+    "stderr": 3.852,
+    "cost_per_test": 0.743646,
+    "latency": 1025.307,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 70.073,
+    "stderr": 3.853,
+    "cost_per_test": 4.293978,
+    "latency": 5610.41,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "zai/glm-5.3": {
+    "accuracy": 70.002,
+    "stderr": 3.853,
+    "cost_per_test": 3.148498,
+    "latency": 2560.072,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 69.16,
+    "stderr": 3.864,
+    "cost_per_test": 23.712329,
+    "latency": 5419.871,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 68.74,
+    "stderr": 3.837,
+    "cost_per_test": 7.644611,
+    "latency": 1762.845,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 68.629,
+    "stderr": 3.837,
+    "cost_per_test": 0.192878,
+    "latency": 1821.684,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 68.016,
+    "stderr": 3.838,
+    "cost_per_test": 0.65668,
+    "latency": 1782.952,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 67.806,
+    "stderr": 3.838,
+    "cost_per_test": 0.285102,
+    "latency": 2076.364,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 67.086,
+    "stderr": 3.839,
+    "cost_per_test": 3.037468,
+    "latency": 4136.695,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 67.012,
+    "stderr": 3.812,
+    "cost_per_test": 2.644886,
+    "latency": 726.706,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 66.642,
+    "stderr": 3.732,
+    "cost_per_test": 8.732768,
+    "latency": 4456.127,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 66.583,
+    "stderr": 3.839,
+    "cost_per_test": 0.926058,
+    "latency": 3046.586,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 66.508,
+    "stderr": 3.777,
+    "cost_per_test": 3.601354,
+    "latency": 1627.93,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 66.094,
+    "stderr": 3.778,
+    "cost_per_test": 0.96533,
+    "latency": 1685.487,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 65.804,
+    "stderr": 3.84,
+    "cost_per_test": 0.052288,
+    "latency": 598.93,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 65.6,
+    "stderr": 3.779,
+    "cost_per_test": 3.45041,
+    "latency": 2377.017,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 65.188,
+    "stderr": 3.815,
+    "cost_per_test": 11.668796,
+    "latency": 1236.644,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "tencent/hy4": {
+    "accuracy": 64.995,
+    "stderr": 3.779,
+    "cost_per_test": 1.648657,
+    "latency": 3430.637,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 64.964,
+    "stderr": 3.735,
+    "cost_per_test": 0.075382,
+    "latency": 1161.65,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 64.866,
+    "stderr": 3.779,
+    "cost_per_test": 7.1221,
+    "latency": 8238.703,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 64.662,
+    "stderr": 3.682,
+    "cost_per_test": 11.165018,
+    "latency": 4290.914,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 64.26,
+    "stderr": 3.736,
+    "cost_per_test": 0.422129,
+    "latency": 2054.972,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 63.332,
+    "stderr": 3.684,
+    "cost_per_test": 0.922855,
+    "latency": 1579.264,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 62.748,
+    "stderr": 3.781,
+    "cost_per_test": 15.900744,
+    "latency": 5226.305,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 62.001,
+    "stderr": 3.623,
+    "cost_per_test": 18.40505,
+    "latency": 1854.358,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 61.728,
+    "stderr": 3.549,
+    "cost_per_test": 0.940816,
+    "latency": 1326.318,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 61.367,
+    "stderr": 3.55,
+    "cost_per_test": 3.16429,
+    "latency": 3354.516,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 59.75,
+    "stderr": 3.467,
+    "cost_per_test": 7.940496,
+    "latency": 5388.026,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 59.162,
+    "stderr": 3.373,
+    "cost_per_test": 2.27185,
+    "latency": 4350.723,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 58.952,
+    "stderr": 3.69,
+    "cost_per_test": 0.154119,
+    "latency": 575.466,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "inception/mercury-3": {
+    "accuracy": 57.607,
+    "stderr": 3.375,
+    "cost_per_test": 0.133472,
+    "latency": 700.025,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 57.406,
+    "stderr": 3.376,
+    "cost_per_test": null,
+    "latency": 112.768,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 55.634,
+    "stderr": 3.27,
+    "cost_per_test": 0.361228,
+    "latency": 1973.337,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 51.642,
+    "stderr": 2.861,
+    "cost_per_test": 2.512074,
+    "latency": 3025.668,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 50.168,
+    "stderr": 3.384,
+    "cost_per_test": 0.893766,
+    "latency": 667.46,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 49.806,
+    "stderr": 2.487,
+    "cost_per_test": 0.232206,
+    "latency": 141.064,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 47.095,
+    "stderr": 1.983,
+    "cost_per_test": 0.721757,
+    "latency": 920.073,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   }
+  },
+  "civil_negligence": {
+   "zai/glm-5.3": {
+    "accuracy": 75.013,
+    "stderr": 4.897,
+    "cost_per_test": 3.29769,
+    "latency": 2268.822,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 74.908,
+    "stderr": 4.859,
+    "cost_per_test": 0.930934,
+    "latency": 3230.99,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 74,
+    "stderr": 4.917,
+    "cost_per_test": 9.088123,
+    "latency": 1990.894,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 73.546,
+    "stderr": 4.921,
+    "cost_per_test": 0.82057,
+    "latency": 965.614,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 73.232,
+    "stderr": 4.923,
+    "cost_per_test": 5.690506,
+    "latency": 1464.859,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 72.605,
+    "stderr": 4.913,
+    "cost_per_test": 7.263408,
+    "latency": 1810.835,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "meta/muse-ember": {
+    "accuracy": 71.914,
+    "stderr": 4.919,
+    "cost_per_test": 0.089316,
+    "latency": 274.259,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "google/gemini-4-carbon": {
+    "accuracy": 71.756,
+    "stderr": 4.92,
+    "cost_per_test": 8.85694,
+    "latency": 2566.902,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "tencent/hy4": {
+    "accuracy": 71.421,
+    "stderr": 4.923,
+    "cost_per_test": 1.548042,
+    "latency": 3132.38,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 71.314,
+    "stderr": 4.924,
+    "cost_per_test": 4.83567,
+    "latency": 5446.238,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 70.693,
+    "stderr": 4.929,
+    "cost_per_test": 1.038144,
+    "latency": 1546.429,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 70.23,
+    "stderr": 4.933,
+    "cost_per_test": 24.340006,
+    "latency": 5312.366,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "meta/muse-wonder-full": {
+    "accuracy": 70.149,
+    "stderr": 4.891,
+    "cost_per_test": 4.416424,
+    "latency": 1996.516,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 69.43,
+    "stderr": 4.897,
+    "cost_per_test": 8.735596,
+    "latency": 1752.459,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 68.584,
+    "stderr": 4.904,
+    "cost_per_test": 4.50782,
+    "latency": 1794.897,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 67.55,
+    "stderr": 4.843,
+    "cost_per_test": 0.987496,
+    "latency": 1453.08,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 67.23,
+    "stderr": 4.846,
+    "cost_per_test": 0.215421,
+    "latency": 2000.109,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 66.483,
+    "stderr": 4.852,
+    "cost_per_test": 24.463302,
+    "latency": 1837.278,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 66.364,
+    "stderr": 4.853,
+    "cost_per_test": 0.359406,
+    "latency": 2049.698,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 66.266,
+    "stderr": 4.756,
+    "cost_per_test": 6.576779,
+    "latency": 866.164,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 66.114,
+    "stderr": 4.855,
+    "cost_per_test": 3.250757,
+    "latency": 4159.094,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 66.032,
+    "stderr": 4.96,
+    "cost_per_test": 15.016695,
+    "latency": 5508.349,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 66.016,
+    "stderr": 4.856,
+    "cost_per_test": 0.058937,
+    "latency": 611.244,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 65.656,
+    "stderr": 4.762,
+    "cost_per_test": 1.074052,
+    "latency": 1122.559,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 65.438,
+    "stderr": 4.86,
+    "cost_per_test": 0.43352,
+    "latency": 1948.84,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 65.358,
+    "stderr": 4.861,
+    "cost_per_test": 14.835178,
+    "latency": 1335.376,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 64.634,
+    "stderr": 4.642,
+    "cost_per_test": 9.109896,
+    "latency": 4057.479,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 64.578,
+    "stderr": 4.771,
+    "cost_per_test": 0.640181,
+    "latency": 1645.096,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 63.951,
+    "stderr": 4.648,
+    "cost_per_test": 3.123175,
+    "latency": 6209.344,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 62.397,
+    "stderr": 4.501,
+    "cost_per_test": 8.759051,
+    "latency": 5363.144,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 62.108,
+    "stderr": 4.504,
+    "cost_per_test": 11.606564,
+    "latency": 3381.143,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 62.079,
+    "stderr": 4.504,
+    "cost_per_test": 0.07676,
+    "latency": 927.93,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 61.297,
+    "stderr": 4.511,
+    "cost_per_test": 2.895082,
+    "latency": 747.007,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 61.168,
+    "stderr": 4.316,
+    "cost_per_test": 9.032886,
+    "latency": 8725.842,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 60.507,
+    "stderr": 4.518,
+    "cost_per_test": 4.416628,
+    "latency": 2550.892,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "inception/mercury-3": {
+    "accuracy": 60.353,
+    "stderr": 4.519,
+    "cost_per_test": 0.162574,
+    "latency": 750.754,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 59.56,
+    "stderr": 4.331,
+    "cost_per_test": 3.336218,
+    "latency": 2859.934,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 57.632,
+    "stderr": 4.348,
+    "cost_per_test": 0.553762,
+    "latency": 2174.68,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 55.823,
+    "stderr": 4.13,
+    "cost_per_test": null,
+    "latency": 105.122,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 53.83,
+    "stderr": 3.867,
+    "cost_per_test": 0.239346,
+    "latency": 142.028,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 53.027,
+    "stderr": 3.535,
+    "cost_per_test": 0.767985,
+    "latency": 852.962,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 51.886,
+    "stderr": 4.7,
+    "cost_per_test": 0.7822,
+    "latency": 723.148,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 50.454,
+    "stderr": 3.562,
+    "cost_per_test": 2.658298,
+    "latency": 2488.701,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 50.088,
+    "stderr": 4.172,
+    "cost_per_test": 0.169756,
+    "latency": 626.551,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   }
+  },
+  "other_civil": {
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 82.008,
+    "stderr": 1.918,
+    "cost_per_test": 6.004786,
+    "latency": 1537.472,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 80.164,
+    "stderr": 1.989,
+    "cost_per_test": 7.066794,
+    "latency": 1629.956,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "google/gemini-4-carbon": {
+    "accuracy": 78.377,
+    "stderr": 2.044,
+    "cost_per_test": 6.661385,
+    "latency": 2112.254,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 77.416,
+    "stderr": 2.009,
+    "cost_per_test": 4.954312,
+    "latency": 868.257,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "meta/muse-wonder-full": {
+    "accuracy": 77.034,
+    "stderr": 2.054,
+    "cost_per_test": 4.272363,
+    "latency": 2197.503,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 76.517,
+    "stderr": 2.022,
+    "cost_per_test": 10.385892,
+    "latency": 3781.138,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 76.209,
+    "stderr": 2.008,
+    "cost_per_test": 3.837495,
+    "latency": 1675.888,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 76.148,
+    "stderr": 2.008,
+    "cost_per_test": 22.734688,
+    "latency": 5054.366,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 75.882,
+    "stderr": 1.991,
+    "cost_per_test": 4.027219,
+    "latency": 1146.211,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "zai/glm-5.3": {
+    "accuracy": 75.54,
+    "stderr": 2.006,
+    "cost_per_test": 2.90558,
+    "latency": 2663.974,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "meta/muse-ember": {
+    "accuracy": 75.06,
+    "stderr": 2.074,
+    "cost_per_test": 0.08489,
+    "latency": 268.896,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 74.862,
+    "stderr": 2.071,
+    "cost_per_test": 0.272762,
+    "latency": 1965.074,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 74.848,
+    "stderr": 2.053,
+    "cost_per_test": 7.474644,
+    "latency": 1662.72,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 74.678,
+    "stderr": 2.073,
+    "cost_per_test": 0.65568,
+    "latency": 1671.505,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 74.604,
+    "stderr": 2.04,
+    "cost_per_test": 0.707751,
+    "latency": 977.096,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 74.494,
+    "stderr": 2.064,
+    "cost_per_test": 0.208941,
+    "latency": 1741.798,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 74.262,
+    "stderr": 1.986,
+    "cost_per_test": 15.28981,
+    "latency": 4969.582,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 73.189,
+    "stderr": 2.014,
+    "cost_per_test": 6.880457,
+    "latency": 3755.044,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 71.831,
+    "stderr": 2.003,
+    "cost_per_test": 8.427324,
+    "latency": 5424.124,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 71.604,
+    "stderr": 2.027,
+    "cost_per_test": 11.42105,
+    "latency": 1145.123,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 71.426,
+    "stderr": 2.103,
+    "cost_per_test": 4.146696,
+    "latency": 5178.454,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 71.152,
+    "stderr": 2.042,
+    "cost_per_test": 3.086727,
+    "latency": 2797.691,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 70.978,
+    "stderr": 2.108,
+    "cost_per_test": 2.858823,
+    "latency": 3581.546,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 70.918,
+    "stderr": 2.002,
+    "cost_per_test": 16.912734,
+    "latency": 1668.168,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 70.914,
+    "stderr": 2.083,
+    "cost_per_test": 0.930298,
+    "latency": 2800.274,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 70.648,
+    "stderr": 2,
+    "cost_per_test": 3.461287,
+    "latency": 2190.502,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 70.502,
+    "stderr": 2.066,
+    "cost_per_test": 0.874779,
+    "latency": 1218.956,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 70.358,
+    "stderr": 2.116,
+    "cost_per_test": 0.929216,
+    "latency": 1552.302,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 69.95,
+    "stderr": 2.101,
+    "cost_per_test": 2.47547,
+    "latency": 736.772,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 68.247,
+    "stderr": 2.1,
+    "cost_per_test": 0.05691,
+    "latency": 575.38,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 67.854,
+    "stderr": 2.069,
+    "cost_per_test": 0.088036,
+    "latency": 1004.871,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 67.626,
+    "stderr": 2.106,
+    "cost_per_test": 1.006436,
+    "latency": 1562.45,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "tencent/hy4": {
+    "accuracy": 67.398,
+    "stderr": 2.072,
+    "cost_per_test": 1.693903,
+    "latency": 3402.619,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 65.47,
+    "stderr": 2.042,
+    "cost_per_test": 2.661252,
+    "latency": 4323.84,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 65.439,
+    "stderr": 2.139,
+    "cost_per_test": 6.744732,
+    "latency": 6433.208,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 64.543,
+    "stderr": 2.059,
+    "cost_per_test": null,
+    "latency": 99.486,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 64.358,
+    "stderr": 2.081,
+    "cost_per_test": 0.347166,
+    "latency": 1864.08,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 63.846,
+    "stderr": 2.019,
+    "cost_per_test": 0.477837,
+    "latency": 2313.94,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 63.662,
+    "stderr": 2.007,
+    "cost_per_test": 2.209622,
+    "latency": 2357.174,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "inception/mercury-3": {
+    "accuracy": 62.865,
+    "stderr": 2.037,
+    "cost_per_test": 0.121494,
+    "latency": 629.384,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 53.769,
+    "stderr": 1.801,
+    "cost_per_test": 0.714416,
+    "latency": 809.579,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 53.078,
+    "stderr": 1.82,
+    "cost_per_test": 0.15761,
+    "latency": 640.7,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 50.883,
+    "stderr": 2.06,
+    "cost_per_test": 0.798106,
+    "latency": 690.048,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 48.434,
+    "stderr": 1.315,
+    "cost_per_test": 0.209492,
+    "latency": 120.422,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   }
+  },
+  "real_estate": {
+   "meta/muse-wonder-full": {
+    "accuracy": 98.397,
+    "stderr": 0.679,
+    "cost_per_test": 6.578616,
+    "latency": 2871.286,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "google/gemini-4-carbon": {
+    "accuracy": 97.668,
+    "stderr": 0.816,
+    "cost_per_test": 7.119745,
+    "latency": 1626.362,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 97.668,
+    "stderr": 0.816,
+    "cost_per_test": 12.038107,
+    "latency": 4177.41,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 97.376,
+    "stderr": 0.864,
+    "cost_per_test": 6.570965,
+    "latency": 1436.35,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 97.23,
+    "stderr": 0.887,
+    "cost_per_test": 5.727136,
+    "latency": 790.378,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "tencent/hy4": {
+    "accuracy": 97.23,
+    "stderr": 0.887,
+    "cost_per_test": 1.223185,
+    "latency": 1257.666,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 97.085,
+    "stderr": 0.91,
+    "cost_per_test": 16.654201,
+    "latency": 2112.972,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 96.939,
+    "stderr": 0.932,
+    "cost_per_test": 4.242998,
+    "latency": 926.974,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 96.939,
+    "stderr": 0.932,
+    "cost_per_test": 5.588856,
+    "latency": 4139.518,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 96.939,
+    "stderr": 0.932,
+    "cost_per_test": 8.0413,
+    "latency": 8222.108,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 96.501,
+    "stderr": 0.994,
+    "cost_per_test": 25.105877,
+    "latency": 19874.44,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 96.21,
+    "stderr": 1.033,
+    "cost_per_test": 5.105426,
+    "latency": 2926.518,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "meta/muse-ember": {
+    "accuracy": 95.918,
+    "stderr": 1.07,
+    "cost_per_test": 0.117582,
+    "latency": 331.57,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 95.918,
+    "stderr": 1.07,
+    "cost_per_test": 2.575492,
+    "latency": 1587.178,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 95.918,
+    "stderr": 1.07,
+    "cost_per_test": 12.048195,
+    "latency": 2034.836,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 95.918,
+    "stderr": 1.07,
+    "cost_per_test": 5.263349,
+    "latency": 2897.188,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 95.627,
+    "stderr": 1.106,
+    "cost_per_test": 4.5574,
+    "latency": 1120.304,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 95.19,
+    "stderr": 1.157,
+    "cost_per_test": 27.678718,
+    "latency": 2089.27,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 95.044,
+    "stderr": 1.174,
+    "cost_per_test": 1.055994,
+    "latency": 904.11,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 94.898,
+    "stderr": 1.19,
+    "cost_per_test": 3.079066,
+    "latency": 2466.112,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 94.898,
+    "stderr": 1.19,
+    "cost_per_test": 4.688049,
+    "latency": 2713.792,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 94.752,
+    "stderr": 1.206,
+    "cost_per_test": 0.669758,
+    "latency": 1407.424,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 94.752,
+    "stderr": 1.206,
+    "cost_per_test": 1.519244,
+    "latency": 1520.664,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 94.606,
+    "stderr": 1.221,
+    "cost_per_test": 0.101049,
+    "latency": 1191.344,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "zai/glm-5.3": {
+    "accuracy": 94.606,
+    "stderr": 1.221,
+    "cost_per_test": 4.97377,
+    "latency": 1838.822,
+    "reasoning_effort": "max",
+    "provider": "Fireworks AI"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 94.169,
+    "stderr": 1.267,
+    "cost_per_test": 0.466666,
+    "latency": 1435.644,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 94.023,
+    "stderr": 1.282,
+    "cost_per_test": 0.651795,
+    "latency": 580.9,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 94.023,
+    "stderr": 1.282,
+    "cost_per_test": 1.964777,
+    "latency": 1943.306,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 93.878,
+    "stderr": 1.296,
+    "cost_per_test": 0.266735,
+    "latency": 1748.814,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 93.732,
+    "stderr": 1.311,
+    "cost_per_test": 2.002748,
+    "latency": 875.316,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 93.586,
+    "stderr": 1.325,
+    "cost_per_test": 0.069663,
+    "latency": 460.786,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 93.44,
+    "stderr": 1.339,
+    "cost_per_test": 1.119961,
+    "latency": 726.292,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 93.003,
+    "stderr": 1.379,
+    "cost_per_test": 0.442482,
+    "latency": 733.85,
+    "reasoning_effort": "max",
+    "provider": "Fireworks AI"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 93.003,
+    "stderr": 1.379,
+    "cost_per_test": 23.439213,
+    "latency": 2085.476,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 92.42,
+    "stderr": 1.431,
+    "cost_per_test": 0.471568,
+    "latency": 1428.066,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 92.128,
+    "stderr": 1.456,
+    "cost_per_test": 24.837858,
+    "latency": 3861.442,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 91.837,
+    "stderr": 1.481,
+    "cost_per_test": 1.123838,
+    "latency": 1577.124,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 90.816,
+    "stderr": 1.562,
+    "cost_per_test": 1.654526,
+    "latency": 1048.624,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "inception/mercury-3": {
+    "accuracy": 90.233,
+    "stderr": 1.605,
+    "cost_per_test": 0.251521,
+    "latency": 946.294,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 88.047,
+    "stderr": 1.754,
+    "cost_per_test": 0.337997,
+    "latency": 159.198,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 88.047,
+    "stderr": 1.754,
+    "cost_per_test": 16.877102,
+    "latency": 5189.844,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 87.318,
+    "stderr": 1.799,
+    "cost_per_test": null,
+    "latency": 106.536,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 77.551,
+    "stderr": 2.256,
+    "cost_per_test": 0.140612,
+    "latency": 452.006,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 66.764,
+    "stderr": 2.547,
+    "cost_per_test": 1.394793,
+    "latency": 437.088,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   }
+  },
+  "labor_employment": {
+   "meta/muse-wonder-full": {
+    "accuracy": 93.446,
+    "stderr": 1.517,
+    "cost_per_test": 4.65707,
+    "latency": 2510.782,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 93.071,
+    "stderr": 1.557,
+    "cost_per_test": 7.283077,
+    "latency": 862.152,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 92.884,
+    "stderr": 1.576,
+    "cost_per_test": 6.38748,
+    "latency": 1416.794,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 92.509,
+    "stderr": 1.614,
+    "cost_per_test": 1.025188,
+    "latency": 1430.008,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 92.509,
+    "stderr": 1.614,
+    "cost_per_test": 12.206492,
+    "latency": 16944.098,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "meta/muse-ember": {
+    "accuracy": 91.573,
+    "stderr": 1.703,
+    "cost_per_test": 0.096555,
+    "latency": 323.276,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 91.573,
+    "stderr": 1.703,
+    "cost_per_test": 5.04344,
+    "latency": 1253.164,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 91.573,
+    "stderr": 1.703,
+    "cost_per_test": 12.785233,
+    "latency": 3427.332,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 91.386,
+    "stderr": 1.72,
+    "cost_per_test": 1.289721,
+    "latency": 1138.694,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 90.637,
+    "stderr": 1.786,
+    "cost_per_test": 0.520216,
+    "latency": 1291.326,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 90.449,
+    "stderr": 1.802,
+    "cost_per_test": 4.960138,
+    "latency": 3339.822,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 90.262,
+    "stderr": 1.818,
+    "cost_per_test": 0.520588,
+    "latency": 684.44,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 90.262,
+    "stderr": 1.818,
+    "cost_per_test": 6.318011,
+    "latency": 4306.704,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 90.075,
+    "stderr": 1.833,
+    "cost_per_test": 9.137915,
+    "latency": 2245.098,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 89.326,
+    "stderr": 1.893,
+    "cost_per_test": 0.5861,
+    "latency": 1128.258,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 89.326,
+    "stderr": 1.893,
+    "cost_per_test": 2.560531,
+    "latency": 2745.574,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 89.139,
+    "stderr": 1.908,
+    "cost_per_test": 14.13358,
+    "latency": 1778.602,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 89.139,
+    "stderr": 1.908,
+    "cost_per_test": 2.389309,
+    "latency": 4514.362,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "zai/glm-5.3": {
+    "accuracy": 88.764,
+    "stderr": 1.936,
+    "cost_per_test": 2.739975,
+    "latency": 1861.322,
+    "reasoning_effort": "max",
+    "provider": "Fireworks AI"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 88.764,
+    "stderr": 1.936,
+    "cost_per_test": 3.430645,
+    "latency": 2750.208,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 88.577,
+    "stderr": 1.95,
+    "cost_per_test": 3.168674,
+    "latency": 1108.248,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 88.577,
+    "stderr": 1.95,
+    "cost_per_test": 0.067578,
+    "latency": 2499.984,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "google/gemini-4-carbon": {
+    "accuracy": 88.39,
+    "stderr": 1.964,
+    "cost_per_test": 5.576825,
+    "latency": 1736.27,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 88.202,
+    "stderr": 1.978,
+    "cost_per_test": 0.176119,
+    "latency": 2219.336,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 88.015,
+    "stderr": 1.991,
+    "cost_per_test": 2.463712,
+    "latency": 2415.098,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 87.453,
+    "stderr": 2.031,
+    "cost_per_test": 1.437287,
+    "latency": 1326.34,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 87.266,
+    "stderr": 2.044,
+    "cost_per_test": 3.640709,
+    "latency": 2478.518,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 86.33,
+    "stderr": 2.106,
+    "cost_per_test": 0.881184,
+    "latency": 1990.538,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 86.142,
+    "stderr": 2.118,
+    "cost_per_test": 0.054263,
+    "latency": 346.864,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "tencent/hy4": {
+    "accuracy": 85.955,
+    "stderr": 2.13,
+    "cost_per_test": 0.948831,
+    "latency": 1210.146,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 85.206,
+    "stderr": 2.177,
+    "cost_per_test": 17.12628,
+    "latency": 3164.882,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 84.644,
+    "stderr": 2.211,
+    "cost_per_test": 0.188769,
+    "latency": 631.722,
+    "reasoning_effort": "max",
+    "provider": "Fireworks AI"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 84.457,
+    "stderr": 2.221,
+    "cost_per_test": 15.520775,
+    "latency": 1800.758,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "inception/mercury-3": {
+    "accuracy": 84.27,
+    "stderr": 2.232,
+    "cost_per_test": 0.143202,
+    "latency": 400.446,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 83.708,
+    "stderr": 2.264,
+    "cost_per_test": 0.165124,
+    "latency": 1239.982,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 83.521,
+    "stderr": 2.275,
+    "cost_per_test": null,
+    "latency": 123.484,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 82.397,
+    "stderr": 2.335,
+    "cost_per_test": 0.970881,
+    "latency": 800.434,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 82.21,
+    "stderr": 2.345,
+    "cost_per_test": 0.426654,
+    "latency": 1855.334,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 80.712,
+    "stderr": 2.419,
+    "cost_per_test": 1.257575,
+    "latency": 1599.504,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 80.15,
+    "stderr": 2.446,
+    "cost_per_test": 17.260921,
+    "latency": 4200.754,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 79.401,
+    "stderr": 2.48,
+    "cost_per_test": 1.781902,
+    "latency": 474.796,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 78.839,
+    "stderr": 2.504,
+    "cost_per_test": 0.230889,
+    "latency": 121.596,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 77.903,
+    "stderr": 2.544,
+    "cost_per_test": 0.197427,
+    "latency": 495.416,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 70.412,
+    "stderr": 2.799,
+    "cost_per_test": 2.379895,
+    "latency": 721.442,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   }
+  },
+  "wills_estates_trusts": {
+   "meta/muse-wonder-full": {
+    "accuracy": 96.565,
+    "stderr": 1.127,
+    "cost_per_test": 4.090553,
+    "latency": 2998.392,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 96.183,
+    "stderr": 1.186,
+    "cost_per_test": 7.713584,
+    "latency": 920.036,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 96.183,
+    "stderr": 1.186,
+    "cost_per_test": 1.331952,
+    "latency": 1282.888,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 95.992,
+    "stderr": 1.214,
+    "cost_per_test": 16.183565,
+    "latency": 1572.052,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 95.611,
+    "stderr": 1.268,
+    "cost_per_test": 7.022074,
+    "latency": 1519.916,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 95.42,
+    "stderr": 1.294,
+    "cost_per_test": 0.610376,
+    "latency": 1358.138,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 95.42,
+    "stderr": 1.294,
+    "cost_per_test": 3.818917,
+    "latency": 3115.438,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "meta/muse-ember": {
+    "accuracy": 95.229,
+    "stderr": 1.319,
+    "cost_per_test": 0.110996,
+    "latency": 345.48,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 95.038,
+    "stderr": 1.344,
+    "cost_per_test": 4.184536,
+    "latency": 1226.72,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 95.038,
+    "stderr": 1.344,
+    "cost_per_test": 0.088474,
+    "latency": 1652.888,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 94.656,
+    "stderr": 1.392,
+    "cost_per_test": 3.359547,
+    "latency": 836.088,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 94.656,
+    "stderr": 1.392,
+    "cost_per_test": 7.811297,
+    "latency": 2488.434,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 94.656,
+    "stderr": 1.392,
+    "cost_per_test": 11.259675,
+    "latency": 4446.966,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 94.466,
+    "stderr": 1.415,
+    "cost_per_test": 0.23816,
+    "latency": 1947.846,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "zai/glm-5.3": {
+    "accuracy": 94.466,
+    "stderr": 1.415,
+    "cost_per_test": 5.43764,
+    "latency": 2222.098,
+    "reasoning_effort": "max",
+    "provider": "Fireworks AI"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 94.275,
+    "stderr": 1.438,
+    "cost_per_test": 3.927228,
+    "latency": 2335.938,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 94.275,
+    "stderr": 1.438,
+    "cost_per_test": 15.744338,
+    "latency": 13246.212,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "google/gemini-4-carbon": {
+    "accuracy": 94.084,
+    "stderr": 1.46,
+    "cost_per_test": 6.513739,
+    "latency": 2261.916,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 93.893,
+    "stderr": 1.482,
+    "cost_per_test": 23.695343,
+    "latency": 1899.114,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "tencent/hy4": {
+    "accuracy": 93.702,
+    "stderr": 1.504,
+    "cost_per_test": 1.032585,
+    "latency": 1287.268,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 93.511,
+    "stderr": 1.525,
+    "cost_per_test": 5.743699,
+    "latency": 3425.472,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 93.321,
+    "stderr": 1.545,
+    "cost_per_test": 1.133087,
+    "latency": 885.334,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 93.321,
+    "stderr": 1.545,
+    "cost_per_test": 11.951101,
+    "latency": 2252.568,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 92.939,
+    "stderr": 1.586,
+    "cost_per_test": 0.89094,
+    "latency": 653.918,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 92.939,
+    "stderr": 1.586,
+    "cost_per_test": 0.369984,
+    "latency": 762.432,
+    "reasoning_effort": "max",
+    "provider": "Fireworks AI"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 92.176,
+    "stderr": 1.662,
+    "cost_per_test": 15.106108,
+    "latency": 4217.882,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 91.794,
+    "stderr": 1.699,
+    "cost_per_test": 2.177515,
+    "latency": 1597.784,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 91.603,
+    "stderr": 1.717,
+    "cost_per_test": 1.563277,
+    "latency": 2075.326,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 91.603,
+    "stderr": 1.717,
+    "cost_per_test": 20.655056,
+    "latency": 3542.812,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "inception/mercury-3": {
+    "accuracy": 91.221,
+    "stderr": 1.752,
+    "cost_per_test": 0.274585,
+    "latency": 1327.644,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 90.84,
+    "stderr": 1.786,
+    "cost_per_test": 2.971612,
+    "latency": 1956.23,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 90.458,
+    "stderr": 1.819,
+    "cost_per_test": 0.915369,
+    "latency": 1410.15,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 90.458,
+    "stderr": 1.819,
+    "cost_per_test": 18.020065,
+    "latency": 1910.168,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 89.885,
+    "stderr": 1.866,
+    "cost_per_test": 0.04754,
+    "latency": 364.654,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 89.504,
+    "stderr": 1.897,
+    "cost_per_test": 0.4795,
+    "latency": 1486.298,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 89.313,
+    "stderr": 1.912,
+    "cost_per_test": 0.427441,
+    "latency": 484.2,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 89.313,
+    "stderr": 1.912,
+    "cost_per_test": 1.233116,
+    "latency": 1012.062,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 89.313,
+    "stderr": 1.912,
+    "cost_per_test": 3.805345,
+    "latency": 2515.052,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 88.55,
+    "stderr": 1.971,
+    "cost_per_test": 1.005392,
+    "latency": 703.102,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 88.55,
+    "stderr": 1.971,
+    "cost_per_test": 0.243579,
+    "latency": 1080.394,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 87.977,
+    "stderr": 2.013,
+    "cost_per_test": 0.480772,
+    "latency": 212.448,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 87.595,
+    "stderr": 2.04,
+    "cost_per_test": null,
+    "latency": 115.176,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 86.45,
+    "stderr": 2.118,
+    "cost_per_test": 1.392685,
+    "latency": 420.692,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 81.489,
+    "stderr": 2.404,
+    "cost_per_test": 0.186361,
+    "latency": 303.938,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   }
+  },
+  "family": {
+   "google/gemini-4-carbon": {
+    "accuracy": 45.455,
+    "stderr": 10.866,
+    "cost_per_test": 12.648487,
+    "latency": 4551.243,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 36.364,
+    "stderr": 10.497,
+    "cost_per_test": 5.323844,
+    "latency": 1437.652,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 36.364,
+    "stderr": 10.497,
+    "cost_per_test": 9.65762,
+    "latency": 2761.19,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 36.364,
+    "stderr": 10.497,
+    "cost_per_test": 10.91868,
+    "latency": 2821.52,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 36.364,
+    "stderr": 10.497,
+    "cost_per_test": 5.806978,
+    "latency": 8086.246,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 31.818,
+    "stderr": 10.164,
+    "cost_per_test": 0.070993,
+    "latency": 1329.086,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "meta/muse-wonder-full": {
+    "accuracy": 31.818,
+    "stderr": 10.164,
+    "cost_per_test": 4.730031,
+    "latency": 2250.577,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "zai/glm-5.3": {
+    "accuracy": 31.818,
+    "stderr": 10.164,
+    "cost_per_test": 2.697912,
+    "latency": 3849.877,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 31.818,
+    "stderr": 10.164,
+    "cost_per_test": 0.970682,
+    "latency": 4670.091,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "meta/muse-ember": {
+    "accuracy": 27.273,
+    "stderr": 9.719,
+    "cost_per_test": 0.07773,
+    "latency": 285.872,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 27.273,
+    "stderr": 9.719,
+    "cost_per_test": 0.826784,
+    "latency": 2445.946,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 27.273,
+    "stderr": 9.719,
+    "cost_per_test": 0.231872,
+    "latency": 2649.862,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 27.273,
+    "stderr": 9.719,
+    "cost_per_test": 9.944024,
+    "latency": 2910.302,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 27.273,
+    "stderr": 9.719,
+    "cost_per_test": 0.286053,
+    "latency": 3202.004,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "tencent/hy4": {
+    "accuracy": 27.273,
+    "stderr": 9.719,
+    "cost_per_test": 2.756433,
+    "latency": 6801.677,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 22.727,
+    "stderr": 9.145,
+    "cost_per_test": 0.383913,
+    "latency": 855.894,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 22.727,
+    "stderr": 9.145,
+    "cost_per_test": 4.336354,
+    "latency": 966.329,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 22.727,
+    "stderr": 9.145,
+    "cost_per_test": 0.418234,
+    "latency": 2019.893,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 22.727,
+    "stderr": 9.145,
+    "cost_per_test": 1.536833,
+    "latency": 3456.123,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 22.727,
+    "stderr": 9.145,
+    "cost_per_test": 1.724456,
+    "latency": 5152.106,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 22.727,
+    "stderr": 9.145,
+    "cost_per_test": 25.835741,
+    "latency": 7441.78,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 18.182,
+    "stderr": 8.417,
+    "cost_per_test": null,
+    "latency": 121.037,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 18.182,
+    "stderr": 8.417,
+    "cost_per_test": 4.563484,
+    "latency": 464.1,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 18.182,
+    "stderr": 8.417,
+    "cost_per_test": 2.522005,
+    "latency": 613.145,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 18.182,
+    "stderr": 8.417,
+    "cost_per_test": 5.56694,
+    "latency": 1482.157,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 18.182,
+    "stderr": 8.417,
+    "cost_per_test": 15.003346,
+    "latency": 1896.183,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 18.182,
+    "stderr": 8.417,
+    "cost_per_test": 3.772956,
+    "latency": 2357.557,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 18.182,
+    "stderr": 8.417,
+    "cost_per_test": 12.577804,
+    "latency": 5320.428,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 13.636,
+    "stderr": 7.489,
+    "cost_per_test": 0.562977,
+    "latency": 1101.097,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 13.636,
+    "stderr": 7.489,
+    "cost_per_test": 1.856297,
+    "latency": 2332.251,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 13.636,
+    "stderr": 7.489,
+    "cost_per_test": 0.672496,
+    "latency": 3983.979,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 13.636,
+    "stderr": 7.489,
+    "cost_per_test": 2.828559,
+    "latency": 3994.975,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 13.636,
+    "stderr": 7.489,
+    "cost_per_test": 4.498695,
+    "latency": 4970.617,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 13.636,
+    "stderr": 7.489,
+    "cost_per_test": 14.30541,
+    "latency": 5843.856,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 13.636,
+    "stderr": 7.489,
+    "cost_per_test": 8.216145,
+    "latency": 6905.045,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "inception/mercury-3": {
+    "accuracy": 9.091,
+    "stderr": 6.273,
+    "cost_per_test": 0.08758,
+    "latency": 514.571,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 9.091,
+    "stderr": 6.273,
+    "cost_per_test": 0.275402,
+    "latency": 733.74,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 9.091,
+    "stderr": 6.273,
+    "cost_per_test": 0.88974,
+    "latency": 2391.966,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 9.091,
+    "stderr": 6.273,
+    "cost_per_test": 0.465031,
+    "latency": 2917.375,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 9.091,
+    "stderr": 6.273,
+    "cost_per_test": 3.697863,
+    "latency": 6312.514,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 4.545,
+    "stderr": 4.545,
+    "cost_per_test": 0.074199,
+    "latency": 98.358,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 4.545,
+    "stderr": 4.545,
+    "cost_per_test": 0.06271,
+    "latency": 933.626,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 4.545,
+    "stderr": 4.545,
+    "cost_per_test": 0.173654,
+    "latency": 1001.225,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 4.545,
+    "stderr": 4.545,
+    "cost_per_test": 3.506565,
+    "latency": 4690.594,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   }
+  },
+  "criminal": {
+   "google/gemini-4-carbon": {
+    "accuracy": 77.215,
+    "stderr": 3.341,
+    "cost_per_test": 7.845107,
+    "latency": 2436.206,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 75.798,
+    "stderr": 3.37,
+    "cost_per_test": 8.778583,
+    "latency": 1894.023,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 74.548,
+    "stderr": 3.379,
+    "cost_per_test": 6.472876,
+    "latency": 1945.272,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "meta/muse-ember": {
+    "accuracy": 73.166,
+    "stderr": 3.395,
+    "cost_per_test": 0.079147,
+    "latency": 265.328,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "meta/muse-wonder-full": {
+    "accuracy": 72.878,
+    "stderr": 3.381,
+    "cost_per_test": 4.535886,
+    "latency": 2061.338,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 71.074,
+    "stderr": 3.398,
+    "cost_per_test": 7.225574,
+    "latency": 1674.112,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 70.415,
+    "stderr": 3.353,
+    "cost_per_test": 5.090418,
+    "latency": 1084.646,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 68.899,
+    "stderr": 3.387,
+    "cost_per_test": 4.062618,
+    "latency": 5141.836,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 68.443,
+    "stderr": 3.362,
+    "cost_per_test": 9.674874,
+    "latency": 3597.017,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 66.964,
+    "stderr": 3.427,
+    "cost_per_test": 0.171708,
+    "latency": 1820.058,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "zai/glm-5.3": {
+    "accuracy": 66.52,
+    "stderr": 3.32,
+    "cost_per_test": 3.258092,
+    "latency": 2552.51,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 66.494,
+    "stderr": 3.465,
+    "cost_per_test": 12.179368,
+    "latency": 1252.592,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 66.135,
+    "stderr": 3.372,
+    "cost_per_test": 2.328008,
+    "latency": 696.026,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 65.762,
+    "stderr": 3.337,
+    "cost_per_test": 1.014546,
+    "latency": 1608.144,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 65.608,
+    "stderr": 3.237,
+    "cost_per_test": 5.725651,
+    "latency": 6988.706,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 64.784,
+    "stderr": 3.553,
+    "cost_per_test": 4.388809,
+    "latency": 1275.935,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 64.336,
+    "stderr": 3.224,
+    "cost_per_test": 3.592647,
+    "latency": 3702.366,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 64.128,
+    "stderr": 3.324,
+    "cost_per_test": 0.84465,
+    "latency": 2720.742,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 64.044,
+    "stderr": 3.326,
+    "cost_per_test": 4.691384,
+    "latency": 1799.255,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 63.911,
+    "stderr": 3.375,
+    "cost_per_test": 16.041522,
+    "latency": 5598.744,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "tencent/hy4": {
+    "accuracy": 63.81,
+    "stderr": 3.236,
+    "cost_per_test": 1.50266,
+    "latency": 3116.152,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 63.224,
+    "stderr": 3.464,
+    "cost_per_test": 3.372206,
+    "latency": 4304.88,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 62.963,
+    "stderr": 3.24,
+    "cost_per_test": 0.808892,
+    "latency": 1096.434,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 62.719,
+    "stderr": 3.472,
+    "cost_per_test": 23.885534,
+    "latency": 5340.53,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 62.494,
+    "stderr": 3.307,
+    "cost_per_test": 0.702351,
+    "latency": 1827.878,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 62.157,
+    "stderr": 3.313,
+    "cost_per_test": 0.054704,
+    "latency": 614.686,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 62.002,
+    "stderr": 3.2,
+    "cost_per_test": 2.407798,
+    "latency": 3944.009,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 61.988,
+    "stderr": 3.317,
+    "cost_per_test": 0.820236,
+    "latency": 1488.128,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 61.146,
+    "stderr": 3.333,
+    "cost_per_test": 3.217998,
+    "latency": 2232.58,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 60.942,
+    "stderr": 3.283,
+    "cost_per_test": 0.268556,
+    "latency": 1722.106,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 60.332,
+    "stderr": 3.097,
+    "cost_per_test": 9.393409,
+    "latency": 5810.688,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 60.198,
+    "stderr": 3.172,
+    "cost_per_test": 0.071428,
+    "latency": 971.123,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 60.114,
+    "stderr": 3.174,
+    "cost_per_test": 2.790784,
+    "latency": 2800.578,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "inception/mercury-3": {
+    "accuracy": 59.61,
+    "stderr": 3.185,
+    "cost_per_test": 0.101202,
+    "latency": 569.89,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 59.441,
+    "stderr": 3.188,
+    "cost_per_test": 14.3998,
+    "latency": 1695.393,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 58.865,
+    "stderr": 3.053,
+    "cost_per_test": 0.444333,
+    "latency": 2081.476,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 56.088,
+    "stderr": 3.111,
+    "cost_per_test": 0.361459,
+    "latency": 1972.19,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 54.514,
+    "stderr": 2.781,
+    "cost_per_test": 0.601877,
+    "latency": 909.862,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 54.094,
+    "stderr": 2.791,
+    "cost_per_test": null,
+    "latency": 98.128,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 53.943,
+    "stderr": 3.482,
+    "cost_per_test": 0.778702,
+    "latency": 966.666,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 51.28,
+    "stderr": 2.745,
+    "cost_per_test": 2.235228,
+    "latency": 2510.192,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 49.5,
+    "stderr": 2.979,
+    "cost_per_test": 0.980578,
+    "latency": 623.437,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 48.224,
+    "stderr": 3.159,
+    "cost_per_test": 0.161725,
+    "latency": 572.635,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 48.157,
+    "stderr": 2.12,
+    "cost_per_test": 0.191074,
+    "latency": 114.2,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   }
+  },
+  "tax_agent_bench": {
+   "google/cobalt-c-high-1p00": {
+    "accuracy": 79.791,
+    "stderr": 2.769,
+    "cost_per_test": 4.947756,
+    "latency": 1389.928,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "google/gemini-4-argon": {
+    "accuracy": 79.027,
+    "stderr": 2.748,
+    "cost_per_test": 3.473645,
+    "latency": 985.634,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "google/gemini-4-hydrogen": {
+    "accuracy": 78.439,
+    "stderr": 2.815,
+    "cost_per_test": 3.870924,
+    "latency": 1094.483,
+    "reasoning_effort": "xhigh",
+    "provider": "Google"
+   },
+   "google/gemini-4-carbon": {
+    "accuracy": 76.414,
+    "stderr": 2.921,
+    "cost_per_test": 6.340026,
+    "latency": 2086.243,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "zai/glm-5.3": {
+    "accuracy": 75.212,
+    "stderr": 2.887,
+    "cost_per_test": 1.80097,
+    "latency": 3052.932,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "meta/muse-wonder-full": {
+    "accuracy": 75.001,
+    "stderr": 2.915,
+    "cost_per_test": 2.147235,
+    "latency": 1084.296,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "deepseek/deepseek-v4.1-flash-1017": {
+    "accuracy": 74.908,
+    "stderr": 2.917,
+    "cost_per_test": 0.459454,
+    "latency": 1264.434,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "alibaba/qwen3.8-max-internal": {
+    "accuracy": 74.26,
+    "stderr": 3.011,
+    "cost_per_test": 4.068548,
+    "latency": 5231.239,
+    "reasoning_effort": null,
+    "provider": "Alibaba"
+   },
+   "anthropic/claude-sonnet-5-5": {
+    "accuracy": 73.395,
+    "stderr": 2.981,
+    "cost_per_test": 8.730268,
+    "latency": 3560.542,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "anthropic/claude-opus-5-5": {
+    "accuracy": 72.028,
+    "stderr": 3.088,
+    "cost_per_test": 14.39883,
+    "latency": 4012.548,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "meta/muse-ember": {
+    "accuracy": 71.353,
+    "stderr": 2.998,
+    "cost_per_test": 0.031788,
+    "latency": 90.131,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "meta/muse-wonder": {
+    "accuracy": 71.161,
+    "stderr": 3.023,
+    "cost_per_test": 1.884439,
+    "latency": 492.843,
+    "reasoning_effort": "max",
+    "provider": "Meta"
+   },
+   "alibaba/qwen4-max": {
+    "accuracy": 70.031,
+    "stderr": 3.124,
+    "cost_per_test": 1.031379,
+    "latency": 1472.654,
+    "reasoning_effort": "xhigh",
+    "provider": "Alibaba"
+   },
+   "grok/grok-4.7": {
+    "accuracy": 68.995,
+    "stderr": 3.125,
+    "cost_per_test": 1.796539,
+    "latency": 996.469,
+    "reasoning_effort": "xhigh",
+    "provider": "SpaceXAI"
+   },
+   "kimi/kimi-k3": {
+    "accuracy": 68.539,
+    "stderr": 3.08,
+    "cost_per_test": 2.790127,
+    "latency": 2415.159,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "tencent/hy4": {
+    "accuracy": 67.717,
+    "stderr": 2.891,
+    "cost_per_test": 1.687683,
+    "latency": 3807.674,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "mistralai/mistral-large-4-oss": {
+    "accuracy": 67.475,
+    "stderr": 3.074,
+    "cost_per_test": 0.503196,
+    "latency": 1023.271,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "anthropic/claude-fable-5-2": {
+    "accuracy": 67.008,
+    "stderr": 3.152,
+    "cost_per_test": 3.309035,
+    "latency": 299.743,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "google/gemini-3.8-flash": {
+    "accuracy": 66.771,
+    "stderr": 3.148,
+    "cost_per_test": 0.857214,
+    "latency": 178.329,
+    "reasoning_effort": "high",
+    "provider": "Google"
+   },
+   "thinkingmachines/inkling-2-small": {
+    "accuracy": 65.752,
+    "stderr": 2.774,
+    "cost_per_test": 0.144342,
+    "latency": 414.041,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "xiaomi/mimo-v2.6-pro": {
+    "accuracy": 64.939,
+    "stderr": 3.214,
+    "cost_per_test": 0.134306,
+    "latency": 1547.695,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "kimi/kimi-k3.1-pro": {
+    "accuracy": 63.868,
+    "stderr": 3.208,
+    "cost_per_test": 3.643476,
+    "latency": 3518.57,
+    "reasoning_effort": "max",
+    "provider": "Moonshot AI"
+   },
+   "tencent/hy4-preview": {
+    "accuracy": 63.712,
+    "stderr": 3.26,
+    "cost_per_test": 0.585277,
+    "latency": 2464.028,
+    "reasoning_effort": null,
+    "provider": "Tencent"
+   },
+   "openai/gpt-6-astra": {
+    "accuracy": 63.335,
+    "stderr": 3.147,
+    "cost_per_test": 5.7963,
+    "latency": 900.586,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "mistralai/mistral-large-4": {
+    "accuracy": 63.294,
+    "stderr": 3.229,
+    "cost_per_test": 1.390372,
+    "latency": 3438.427,
+    "reasoning_effort": "high",
+    "provider": "Mistral AI"
+   },
+   "openai/gpt-6.2-sol": {
+    "accuracy": 62.902,
+    "stderr": 3.191,
+    "cost_per_test": 2.401632,
+    "latency": 2617.192,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "minimax/MiniMax-M3.1-flash": {
+    "accuracy": 62.715,
+    "stderr": 3.255,
+    "cost_per_test": 0.320948,
+    "latency": 1962.771,
+    "reasoning_effort": null,
+    "provider": "MiniMax"
+   },
+   "openai/gpt-6.1-sol": {
+    "accuracy": 62.31,
+    "stderr": 3.2,
+    "cost_per_test": 1.323601,
+    "latency": 1213.878,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "anthropic/claude-haiku-5-5": {
+    "accuracy": 62.203,
+    "stderr": 3.222,
+    "cost_per_test": 1.164207,
+    "latency": 2973.647,
+    "reasoning_effort": null,
+    "provider": "Anthropic"
+   },
+   "zai/glm-5.3-flash": {
+    "accuracy": 61.956,
+    "stderr": 3.256,
+    "cost_per_test": 0.138062,
+    "latency": 1297.006,
+    "reasoning_effort": "max",
+    "provider": "Zhipu AI"
+   },
+   "xiaomi/mimo-v2.6-flash": {
+    "accuracy": 59.904,
+    "stderr": 3.13,
+    "cost_per_test": 0.048982,
+    "latency": 1038.928,
+    "reasoning_effort": null,
+    "provider": "Xiaomi"
+   },
+   "stepfun/step-5-preview": {
+    "accuracy": 59.539,
+    "stderr": 3.09,
+    "cost_per_test": 0.55338,
+    "latency": 1288.515,
+    "reasoning_effort": null,
+    "provider": "Stepfun"
+   },
+   "openai/gpt-6-luna": {
+    "accuracy": 58.864,
+    "stderr": 3.211,
+    "cost_per_test": 0.190956,
+    "latency": 1995.736,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "deepseek/deepseek-v4-pro-0813": {
+    "accuracy": 58.663,
+    "stderr": 3.138,
+    "cost_per_test": 0.729136,
+    "latency": 1596.755,
+    "reasoning_effort": "max",
+    "provider": "DeepSeek"
+   },
+   "openai/gpt-6.2-astra": {
+    "accuracy": 57.858,
+    "stderr": 2.873,
+    "cost_per_test": 7.898144,
+    "latency": 3692.936,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "tencent/hy4-flash": {
+    "accuracy": 56.511,
+    "stderr": 3.287,
+    "cost_per_test": 0.033873,
+    "latency": 371.716,
+    "reasoning_effort": null,
+    "provider": "Openrouter"
+   },
+   "openai/gpt-6.1-terra": {
+    "accuracy": 55.036,
+    "stderr": 3.301,
+    "cost_per_test": 2.159819,
+    "latency": 2751.35,
+    "reasoning_effort": "max",
+    "provider": "OpenAI"
+   },
+   "meta/muse-spark-open": {
+    "accuracy": 52.066,
+    "stderr": 2.387,
+    "cost_per_test": 0.883559,
+    "latency": 701.825,
+    "reasoning_effort": "xhigh",
+    "provider": "Together AI"
+   },
+   "inception/mercury-3": {
+    "accuracy": 48.57,
+    "stderr": 2.866,
+    "cost_per_test": 0.045925,
+    "latency": 269.272,
+    "reasoning_effort": "high",
+    "provider": "Inception"
+   },
+   "thinkingmachines/inkling": {
+    "accuracy": 43.516,
+    "stderr": 2.947,
+    "cost_per_test": 0.353757,
+    "latency": 810.557,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "thinkingmachines/inkling-small": {
+    "accuracy": 41.461,
+    "stderr": 2.871,
+    "cost_per_test": 0.091767,
+    "latency": 385.252,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "thinkingmachines/inkling-mini-1117": {
+    "accuracy": 41.325,
+    "stderr": 2.614,
+    "cost_per_test": 0.111554,
+    "latency": 399.61,
+    "reasoning_effort": "0.99",
+    "provider": "Thinkingmachines"
+   },
+   "reflection/Beam-1.0": {
+    "accuracy": 36.273,
+    "stderr": 2.777,
+    "cost_per_test": null,
+    "latency": 57.987,
+    "reasoning_effort": null,
+    "provider": "Reflection"
+   },
+   "baseten/nemotron-3.5-super-vl-120b-a12b": {
+    "accuracy": 35.395,
+    "stderr": 2.86,
+    "cost_per_test": 0.046335,
+    "latency": 72.661,
+    "reasoning_effort": "high",
+    "provider": "Baseten"
+   }
+  }
+ }
+}

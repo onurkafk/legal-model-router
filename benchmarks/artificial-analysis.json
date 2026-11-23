@@ -1,0 +1,132 @@
+{
+ "source": "https://artificialanalysis.ai/indexes/legal",
+ "retrieved": "2026-11-23",
+ "note": "Transcribed by hand from the \"Artificial Analysis Legal Index: Capability Breakdown\" chart (23 Nov 2026) the operator supplied; the page publishes no table. Values are the sub-scores printed on the bars; null = not legible. Long-context is not printed. Not on the chart: Gemini 4 Argon, GPT-6.1 Sol, GPT-6 Astra.",
+ "weights": {
+  "legal_knowledge": 0.3,
+  "agentic_knowledge_work": 0.25,
+  "reasoning": 0.15,
+  "non_hallucination": 0.15,
+  "long_context": 0.1,
+  "agentic_tool_use": 0.05
+ },
+ "models": {
+  "google/cobalt-c-high-1p00": {
+   "label": "Gemini 4 Neon (xhigh)",
+   "index": 64,
+   "legal_knowledge": 57,
+   "agentic_knowledge_work": 60,
+   "reasoning": 71,
+   "non_hallucination": 94,
+   "agentic_tool_use": 82
+  },
+  "anthropic/claude-fable-5-2": {
+   "label": "Claude Fable 5.2 (max)",
+   "index": 63,
+   "legal_knowledge": 72,
+   "agentic_knowledge_work": 64,
+   "reasoning": 80,
+   "non_hallucination": 48,
+   "agentic_tool_use": 81
+  },
+  "google/gemini-4-carbon": {
+   "label": "Gemini 4 Carbon (high)",
+   "index": 62,
+   "legal_knowledge": 57,
+   "agentic_knowledge_work": 56,
+   "reasoning": 69,
+   "non_hallucination": 92,
+   "agentic_tool_use": 82
+  },
+  "openai/gpt-6.2-astra": {
+   "label": "GPT-6.2 Astra (max)",
+   "index": 59,
+   "legal_knowledge": 59,
+   "agentic_knowledge_work": 57,
+   "reasoning": 72,
+   "non_hallucination": 60,
+   "agentic_tool_use": 79
+  },
+  "anthropic/claude-opus-5-5": {
+   "label": "Claude Opus 5.5 (max)",
+   "index": 58,
+   "legal_knowledge": 50,
+   "agentic_knowledge_work": 66,
+   "reasoning": 68,
+   "non_hallucination": 67,
+   "agentic_tool_use": 77
+  },
+  "google/gemini-4-hydrogen": {
+   "label": "Gemini 4 Hydrogen (xhigh)",
+   "index": 57,
+   "legal_knowledge": 45,
+   "agentic_knowledge_work": 53,
+   "reasoning": 59,
+   "non_hallucination": 94,
+   "agentic_tool_use": 81
+  },
+  "openai/gpt-6.2-sol": {
+   "label": "GPT-6.2 Sol (max)",
+   "index": 55,
+   "legal_knowledge": 48,
+   "agentic_knowledge_work": 56,
+   "reasoning": 64,
+   "non_hallucination": 69,
+   "agentic_tool_use": 75
+  },
+  "anthropic/claude-sonnet-5-5": {
+   "label": "Claude Sonnet 5.5",
+   "index": 52,
+   "legal_knowledge": 33,
+   "agentic_knowledge_work": 66,
+   "reasoning": 53,
+   "non_hallucination": 77,
+   "agentic_tool_use": 76
+  },
+  "meta/muse-wonder-full": {
+   "label": "Muse Wonder Full (max)",
+   "index": 51,
+   "legal_knowledge": 25,
+   "agentic_knowledge_work": 61,
+   "reasoning": 49,
+   "non_hallucination": 88,
+   "agentic_tool_use": 79
+  },
+  "grok/grok-4.7": {
+   "label": "Grok 4.7 (xhigh)",
+   "index": 47,
+   "legal_knowledge": 35,
+   "agentic_knowledge_work": 58,
+   "reasoning": null,
+   "non_hallucination": 87,
+   "agentic_tool_use": 72
+  },
+  "meta/muse-wonder": {
+   "label": "Muse Wonder (max)",
+   "index": 47,
+   "legal_knowledge": 22,
+   "agentic_knowledge_work": 58,
+   "reasoning": 39,
+   "non_hallucination": 85,
+   "agentic_tool_use": 79
+  },
+  "openai/gpt-6.1-terra": {
+   "label": "GPT-6.1 Terra (max)",
+   "index": 46,
+   "legal_knowledge": 30,
+   "agentic_knowledge_work": 45,
+   "reasoning": 47,
+   "non_hallucination": 83,
+   "agentic_tool_use": null
+  },
+  "openai/gpt-6-luna": {
+   "label": "GPT-6 Luna (max)",
+   "index": 32,
+   "legal_knowledge": 24,
+   "agentic_knowledge_work": 42,
+   "reasoning": null,
+   "non_hallucination": 38,
+   "agentic_tool_use": null
+  }
+ }
+}

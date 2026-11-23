@@ -1,0 +1,155 @@
+# Legal Model Router routing policy. Operator-owned: this file says WHICH models may serve and HOW a
+# request's classification picks among them. The scores come from the Vals Legal Index and are not
+# written here; scripts/build_routing_table.py joins the two and writes
+# config/routing-table.json (what the router reads) and config/routing-table.md (what a
+# person reads). Edit this file, re-run the script, review the .md diff.
+#
+
+version: routing-policy
+
+benchmark: benchmarks/vals-legal-index.json    # Vals Legal Index, 2026-11-19
+servable: benchmarks/openrouter.json            # OpenRouter models and ZDR endpoints
+capabilities: benchmarks/artificial-analysis.json   # Artificial Analysis Legal Index sub-scores, 2026-11-23
+
+# ---------------------------------------------------------------------------------------------
+# 1. Who may serve. Major-lab flagships only (operator decision, 2026-11-23): Google, Meta,
+#    Anthropic, OpenAI, xAI. No small, flash or open-weight variants. Every model below must also
+#    have a zero-data-retention endpoint on OpenRouter; the builder drops any that does not and
+#    says so in the .md.
+#
+#    vals: the id on the Vals board.  openrouter: the id we call.  effort: the reasoning effort
+#    Vals scored it at; calling at a different effort is calling a different model.
+# ---------------------------------------------------------------------------------------------
+allowed_models:
+  - {vals: google/cobalt-c-high-1p00,  openrouter: google/gemini-4-neon,      effort: xhigh}   # Gemini 4 Neon
+  - {vals: google/gemini-4-argon,      openrouter: google/gemini-4-argon,     effort: high}
+  - {vals: google/gemini-4-carbon,     openrouter: google/gemini-4-carbon,    effort: high}
+  - {vals: google/gemini-4-hydrogen,   openrouter: google/gemini-4-hydrogen,  effort: xhigh}
+  - {vals: meta/muse-wonder,           openrouter: meta/muse-wonder,          effort: max}
+  - {vals: anthropic/claude-opus-5-5,  openrouter: anthropic/claude-opus-5.5, effort: null}
+  - {vals: grok/grok-4.7,              openrouter: x-ai/grok-4.7,             effort: xhigh}
+  - {vals: openai/gpt-6.2-astra,       openrouter: openai/gpt-6.2-astra,      effort: max}
+  - {vals: openai/gpt-6-astra,         openrouter: openai/gpt-6-astra,        effort: max}
+  - {vals: openai/gpt-6.2-sol,         openrouter: openai/gpt-6.2-sol,        effort: max}
+  - {vals: openai/gpt-6.1-sol,         openrouter: openai/gpt-6.1-sol,        effort: max}
+
+# Flagships that would qualify but cannot be served. Kept here so the reason is on record.
+unservable:
+  meta/muse-wonder-full: "#2 overall, but OpenRouter has no id for it (only meta/muse-wonder)"
+
+# Excluded by the operator whatever they score.
+denied:
+  - meta/muse-ember          # not a flagship
+  - meta/muse-spark-open     # open-weight variant
+  - anthropic/claude-fable-5-2   # operator: no Fable (it also has no zero-data-retention endpoint)
+  - anthropic/claude-sonnet-5-5  # operator: from Anthropic, always Opus 5.5
+  - anthropic/claude-haiku-5-5
+  - google/gemini-3.8-flash
+  - openai/gpt-6-luna
+  - openai/gpt-6.1-terra
+  - zai/glm-5.3              # not a major lab (and every other model from labs outside the five)
+  - kimi/kimi-k3
+
+# ---------------------------------------------------------------------------------------------
+# 2. Rows. One per Vals Index line, plus `overall` for a request whose line is unknown.
+#    The line comes from the classifier's practice_area (87% right on 1,481 Harvey tasks).
+# ---------------------------------------------------------------------------------------------
+line_of_practice_area:
+  corporate_ma: business_commercial
+  corporate_governance: business_commercial
+  capital_markets: business_commercial
+  banking_finance: business_commercial
+  emerging_companies_venture_capital: business_commercial
+  funds_asset_management: business_commercial
+  structured_finance_securitization: business_commercial
+  antitrust_competition: business_commercial
+  insurance: business_commercial
+  data_privacy_cybersecurity: business_commercial
+  intellectual_property: business_commercial
+  bankruptcy_restructuring: business_commercial
+  commercial_contracts: business_commercial
+  litigation_dispute_resolution: civil_negligence
+  arbitration_international_dispute_resolution: civil_negligence
+  environmental_esg: other_civil
+  energy_natural_resources: other_civil
+  international_trade_sanctions: other_civil
+  healthcare_life_sciences: other_civil
+  immigration: other_civil
+  real_estate: real_estate
+  employment_labor: labor_employment
+  trusts_estates_private_client: wills_estates_trusts
+  white_collar_defense_investigations: criminal
+  tax: tax_agent_bench
+  other: overall
+# Family has no practice area of its own in the classifier (trusts_estates_private_client covers
+# "family law" in its description), so no request reaches the family row today. It is built
+# anyway, so adding a `family` practice area later needs no change here.
+
+# ---------------------------------------------------------------------------------------------
+# 3. The four picks every row carries.
+# ---------------------------------------------------------------------------------------------
+top_k: 5                       # the pool: the five best allowed models on the row
+picks:
+  best: "for work that turns on the law: among models passing law_gate, the #1 on the row, unless one within best_within_points costs at least best_min_saving less; then the cheapest such model"
+  efficient: "cheapest model in the pool within efficient_within_points of #1"
+  economy: "cheapest allowed model within economy_within_points of #1 that uses no more tokens per test than #1 (may be outside the pool). Operator, 2026-11-23: keeps the token-heavy Gemini 4 Hydrogen (8.3M) off cheap work; pure fewest-tokens cost up to 2.5x more"
+  escalated: "always escalation_model"
+# Best is used for research, advice and anything the router is unsure about, so the model must
+# know the law. Vals cannot say that on every line: Real Estate, Labor & Employment and Wills are
+# scored on document work only, which is how Muse Wonder (Artificial Analysis legal knowledge 22)
+# tops two of them and Gemini 4 Hydrogen (45) came within 2 points of three #1s. A model with no
+# Artificial Analysis score does not pass.
+law_gate:
+  min_legal_knowledge: 55      # Artificial Analysis Legal Knowledge (AA-Omniscience law accuracy)
+  min_non_hallucination: 65    # Artificial Analysis Non-Hallucination: does not invent law
+best_within_points: 2.0       # operator, 2026-11-23: 1-2 points behind #1 and much cheaper -> use it
+best_min_saving: 0.25         # "much cheaper": at least 25% less per test than #1
+efficient_within_points: 3.0   # a few points do not matter, but more than this does
+economy_within_points: 8.0
+escalation_model: anthropic/claude-opus-5-5   # operator decision, 2026-11-23: always Opus 5.5
+
+# ---------------------------------------------------------------------------------------------
+# 4. Which pick a request gets. The decision model (Elephant-1) answers config/questions.json;
+#    the first rule that matches wins. Thresholds are the ones measured in docs/evaluation.md.
+# ---------------------------------------------------------------------------------------------
+rules:
+  - when: {sent_back: true}
+    pick: escalated
+    why: "A lawyer rejected the output; no benchmark average outweighs that."
+
+  - when: {classifier: unavailable}
+    row: overall
+    pick: best
+    why: "Nothing is known about the request, so take the overall #1."
+
+  - when: {section_confidence_below: 0.7}
+    row: overall
+    pick: best
+    why: "The kind of work is unsettled; a wrong guess could send law-dependent work cheap."
+
+  - when: {work_type: new_drafting}
+    unless: {drafting_complexity: standard_form, probability_at_least: 0.7}
+    pick: escalated
+    why: "A bespoke document drafted from nothing goes to Claude Opus 5.5 (operator decision, 2026-11-23). No Vals board measures drafting from nothing; on legalbenchmarks.ai contract work (Nov 2026) Opus 5.5 is joint #1 (48.4% of tasks, 91.7% of criteria) and Gemini 4 Argon, #3 on Vals Business & Commercial, passes 25.8%."
+
+  - when: {research_or_drafting_at_least: 0.3}   # P(research_or_advice) + P(new_drafting)
+    unless: {work_type: new_drafting, drafting_complexity: standard_form, probability_at_least: 0.7}   # standard vs bespoke means something only for new drafting
+    pick: best
+    why: "The model must supply the law or design a bespoke document. Measured: 31/31 recall on the fresh holdout."
+
+  - when: {work_type: new_drafting}              # reached only for standard forms, by the rule above
+    pick: efficient
+    why: "An NDA, power of attorney or board resolution from a few facts. 0/13 bespoke drafts were let through."
+
+  - when: {section: [data_extraction, summary_or_chronology, translation]}
+    pick: economy
+    why: "Bounded by text already in the prompt; the model does not have to know any law."
+
+  - when: {work_type: not_legal_work}
+    row: overall
+    pick: economy
+    why: "Scheduling, billing and other admin."
+
+  - when: {}                                      # everything else: review, markup, work from supplied text
+    pick: efficient
+    why: "Work from supplied material, checked against that material."
