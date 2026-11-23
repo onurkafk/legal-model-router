@@ -55,7 +55,8 @@ def test_economy_is_cheapest_near_the_top_without_more_tokens_than_it():
     for name, row in TABLE['rows'].items():
         ok = [m for m in tokens if vals[name][m]['accuracy'] >= row['top']['score'] - POLICY['economy_within_points']
               and tokens[m] <= tokens[row['top']['vals_id']]]
-        assert row['economy']['cost_per_test'] == round(min(vals[name][m]['cost_per_test'] for m in ok), 2), name
+        cheapest = min([row['best']['cost_per_test'], *(round(vals[name][m]['cost_per_test'], 2) for m in ok)])
+        assert row['economy']['cost_per_test'] == cheapest <= row['best']['cost_per_test'], name
         assert row['economy']['model'] != 'google/gemini-4-hydrogen'
 
 

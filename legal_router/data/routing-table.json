@@ -405,12 +405,12 @@
     "tokens_per_test_m": 8.28
    },
    "economy": {
-    "model": "google/gemini-4-argon",
-    "effort": "high",
-    "vals_id": "google/gemini-4-argon",
-    "score": 74,
-    "cost_per_test": 9.09,
-    "tokens_per_test_m": 4.33
+    "model": "google/gemini-4-neon",
+    "effort": "xhigh",
+    "vals_id": "google/cobalt-c-high-1p00",
+    "score": 72.61,
+    "cost_per_test": 7.26,
+    "tokens_per_test_m": 5.99
    },
    "escalated": {
     "model": "anthropic/claude-opus-5.5",

@@ -92,7 +92,7 @@ top_k: 5                       # the pool: the five best allowed models on the r
 picks:
   best: "for work that turns on the law: among models passing law_gate, the #1 on the row, unless one within best_within_points costs at least best_min_saving less; then the cheapest such model"
   efficient: "cheapest model in the pool within efficient_within_points of #1"
-  economy: "cheapest allowed model within economy_within_points of #1 that uses no more tokens per task than #1 (may be outside the pool). Operator, 2026-11-23: keeps the token-heavy Gemini 4 Hydrogen (8.3M) off cheap work; pure fewest-tokens cost up to 2.5x more"
+  economy: "the line's Best, or the cheapest allowed model within economy_within_points of #1 that uses no more tokens per task than #1 if that costs less (may be outside the pool). Operator, 2026-11-24: never more than Best (Civil Negligence took Gemini 4 Argon at $9.09 over Neon at $7.26). Operator, 2026-11-23: keeps the token-heavy Gemini 4 Hydrogen (8.3M) off cheap work; pure fewest-tokens cost up to 2.5x more"
   escalated: "always escalation_model"
 # Best is used for research, advice and anything the router is unsure about, so the model must
 # know the law. Vals cannot say that on every line: Real Estate, Labor & Employment and Wills are

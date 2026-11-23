@@ -1,6 +1,6 @@
 # Legal Model Router
 
-**Cut your legal AI bill by 64%. Keep the flagship model for the work that needs it.**
+**Cut your legal AI bill by 65%. Keep the flagship model for the work that needs it.**
 
 Most teams send every legal task to one premium model: the NDA, the lease summary, the share purchase
 agreement and the billing question all at the same price. The Legal Model Router reads each request, works
@@ -23,7 +23,7 @@ One OpenRouter key. One command: `/legal-router` in Claude Code. Zero data reten
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/savings-dark.png">
-  <img alt="Average cost per legal task: Claude Opus 5.5 $22.20, GPT-6.2 Astra $10.11, Legal Model Router $7.89" src="docs/assets/savings-light.png" width="720">
+  <img alt="Average cost per legal task: Claude Opus 5.5 $22.20, GPT-6.2 Astra $10.11, Legal Model Router $7.81" src="docs/assets/savings-light.png" width="720">
 </picture>
 
 195 legal requests (research, contracts, filings, reviews, extractions, summaries, translations, admin),
@@ -31,14 +31,14 @@ each read by d1-ultra and priced at the Vals Legal Index cost of the model it wa
 
 | Sending every request to | Cost per task | Tokens per task | The router costs |
 |---|---|---|---|
-| Claude Opus 5.5 | $22.20 | 15.4M | **64% less, with less than half the tokens** |
-| GPT-6.2 Astra | $10.11 | 3.0M | **22% less** |
-| **Legal Model Router** | **$7.89** | 6.7M | |
+| Claude Opus 5.5 | $22.20 | 15.4M | **65% less, with less than half the tokens** |
+| GPT-6.2 Astra | $10.11 | 3.0M | **23% less** |
+| **Legal Model Router** | **$7.81** | 6.8M | |
 
-- **$14,310 saved on every 1,000 tasks** against an all-Opus 5.5 setup.
+- **$14,390 saved on every 1,000 tasks** against an all-Opus 5.5 setup.
 - **Research and advice cost 70% less** than on Opus 5.5, on each line's best model that knows the law.
-- **Extraction, summaries, translation and admin cost 76% less** than on Opus 5.5: $5.22 a task against $22.12.
-- **Everything except bespoke drafting costs 72% less than Opus 5.5** and 8% less than Gemini 4 Neon, the
+- **Extraction, summaries, translation and admin cost 78% less** than on Opus 5.5: $4.92 a task against $22.12.
+- **Everything except bespoke drafting costs 73% less than Opus 5.5** and 9% less than Gemini 4 Neon, the
   overall #1, because each line's work goes to that line's best-value model.
 - **Reading a request costs $0.00014** with d1-ultra, nothing with Decider V1.3.
 
@@ -114,7 +114,7 @@ Each Vals line has four picks, rebuilt from the benchmark data by one script:
 |---|---|---|
 | **Best** | Research and advice, anything that turns on the law | The #1 on the line among models that pass a law gate, or one within 2 points of it that costs at least 25% less |
 | **Efficient** | Standard-form drafting; review and markup of supplied text | The cheapest of the line's top 5 within 3 points of #1 |
-| **Economy** | Extraction, summaries, chronologies, translation, admin | The cheapest model within 8 points of #1 that uses no more tokens than #1 |
+| **Economy** | Extraction, summaries, chronologies, translation, admin | The cheapest model within 8 points of #1 that uses no more tokens than #1, and never dearer than Best |
 | **Escalated** | Bespoke drafting from scratch, and every send-back | Claude Opus 5.5 |
 
 The rules live in one readable file, [`config/routing-policy.yaml`](config/routing-policy.yaml). The full
@@ -148,7 +148,7 @@ OpenRouter serves with zero data retention. Today's routes:
 |---|---|---|---|
 | Overall (area unknown) | Gemini 4 Neon | Gemini 4 Neon | Muse Wonder |
 | Business & Commercial | Gemini 4 Neon | Gemini 4 Neon | Muse Wonder |
-| Civil Negligence | Gemini 4 Neon | Gemini 4 Hydrogen | Gemini 4 Argon |
+| Civil Negligence | Gemini 4 Neon | Gemini 4 Hydrogen | Gemini 4 Neon |
 | Other Civil | Gemini 4 Neon | Gemini 4 Neon | Muse Wonder |
 | Real Estate | Gemini 4 Carbon | Gemini 4 Hydrogen | GPT-6.2 Sol |
 | Labor & Employment | Gemini 4 Neon | GPT-6.2 Astra | GPT-6.2 Sol |

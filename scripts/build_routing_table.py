@@ -73,8 +73,9 @@ def row(scores: dict, models: dict, policy: dict, knows_law: set, tokens: dict) 
         'top': entry(*pool[0]),
         'best': entry(*best),
         'efficient': entry(*cheapest(pool, policy['efficient_within_points'])),
-        'economy': entry(*min((vs for vs in ranked if vs[1]['accuracy'] >= top - policy['economy_within_points']
-                               and tokens[vs[0]] <= tokens[pool[0][0]]),
+        # Economy never costs more than Best: Best is always a candidate.
+        'economy': entry(*min([best, *(vs for vs in ranked if vs[1]['accuracy'] >= top - policy['economy_within_points']
+                                       and tokens[vs[0]] <= tokens[pool[0][0]])],
                               key=lambda vs: (vs[1]['cost_per_test'], tokens[vs[0]]))),
         'escalated': entry(esc, scores[esc]) if esc in scores else {'model': models[esc]['openrouter']},
     }
@@ -135,7 +136,7 @@ def markdown(t: dict, policy: dict) -> str:
             f"models that know the law ({', '.join(m.split('/')[1] for m in t['knows_law'])}: Artificial Analysis legal knowledge "
             f">= {policy['law_gate']['min_legal_knowledge']} and non-hallucination >= {policy['law_gate']['min_non_hallucination']}), "
             f"or one within {policy['best_within_points']} points that costs at least {policy['best_min_saving']:.0%} less. Efficient = cheapest in the pool within "
-            f"{policy['efficient_within_points']} points of #1. Economy = cheapest allowed model using no more tokens per task than #1, within "
+            f"{policy['efficient_within_points']} points of #1. Economy = the line's Best or, if cheaper, the cheapest allowed model using no more tokens per task than #1, within "
             f"{policy['economy_within_points']} points of #1. Escalated = Claude Opus 5.5 ({policy['escalation_model']}) everywhere.", '',
             '| Row | #1 on Vals | Best | Efficient | Economy | Pool |', '|---|---|---|---|---|---|']
     for k, r in t['rows'].items():

@@ -28,13 +28,13 @@ The model that reads each request. Default: `d1-ultra`. Choose another with `--c
 
 ## The picks on each row
 
-Pool = the 5 best allowed models on the row. Best = for work that turns on the law: the #1 among models that know the law (gemini-4-carbon, gemini-4-neon: Artificial Analysis legal knowledge >= 55 and non-hallucination >= 65), or one within 2.0 points that costs at least 25% less. Efficient = cheapest in the pool within 3.0 points of #1. Economy = cheapest allowed model using no more tokens per task than #1, within 8.0 points of #1. Escalated = Claude Opus 5.5 (anthropic/claude-opus-5-5) everywhere.
+Pool = the 5 best allowed models on the row. Best = for work that turns on the law: the #1 among models that know the law (gemini-4-carbon, gemini-4-neon: Artificial Analysis legal knowledge >= 55 and non-hallucination >= 65), or one within 2.0 points that costs at least 25% less. Efficient = cheapest in the pool within 3.0 points of #1. Economy = the line's Best or, if cheaper, the cheapest allowed model using no more tokens per task than #1, within 8.0 points of #1. Escalated = Claude Opus 5.5 (anthropic/claude-opus-5-5) everywhere.
 
 | Row | #1 on Vals | Best | Efficient | Economy | Pool |
 |---|---|---|---|---|---|
 | Overall (line unknown) | gemini-4-neon 78.36 · $6.1 · 5.99M tok | gemini-4-neon 78.36 · $6.1 · 5.99M tok | gemini-4-neon 78.36 · $6.1 · 5.99M tok | muse-wonder 75.26 · $4.32 · 5.57M tok | gemini-4-neon, gemini-4-argon, gemini-4-carbon, muse-wonder, gemini-4-hydrogen |
 | Business & Commercial | gemini-4-neon 75.64 · $7.24 · 5.99M tok | gemini-4-neon 75.64 · $7.24 · 5.99M tok | gemini-4-neon 75.64 · $7.24 · 5.99M tok | muse-wonder 72.44 · $5.57 · 5.57M tok | gemini-4-neon, muse-wonder, gemini-4-argon, gemini-4-hydrogen, gemini-4-carbon |
-| Civil Negligence | gemini-4-argon 74 · $9.09 · 4.33M tok | gemini-4-neon 72.61 · $7.26 · 5.99M tok | gemini-4-hydrogen 73.23 · $5.69 · 8.28M tok | gemini-4-argon 74 · $9.09 · 4.33M tok | gemini-4-argon, gemini-4-hydrogen, gemini-4-neon, gemini-4-carbon, claude-opus-5.5 |
+| Civil Negligence | gemini-4-argon 74 · $9.09 · 4.33M tok | gemini-4-neon 72.61 · $7.26 · 5.99M tok | gemini-4-hydrogen 73.23 · $5.69 · 8.28M tok | gemini-4-neon 72.61 · $7.26 · 5.99M tok | gemini-4-argon, gemini-4-hydrogen, gemini-4-neon, gemini-4-carbon, claude-opus-5.5 |
 | Other Civil | gemini-4-neon 82.01 · $6.0 · 5.99M tok | gemini-4-neon 82.01 · $6.0 · 5.99M tok | gemini-4-neon 82.01 · $6.0 · 5.99M tok | muse-wonder 77.42 · $4.95 · 5.57M tok | gemini-4-neon, gemini-4-argon, gemini-4-carbon, muse-wonder, gpt-6.2-astra |
 | Real Estate | gemini-4-carbon 97.67 · $7.12 · 5.22M tok | gemini-4-carbon 97.67 · $7.12 · 5.22M tok | gemini-4-hydrogen 96.94 · $4.24 · 8.28M tok | gpt-6.2-sol 95.92 · $2.58 · 3.11M tok | gemini-4-carbon, gemini-4-neon, muse-wonder, gemini-4-argon, gemini-4-hydrogen |
 | Labor & Employment | muse-wonder 93.07 · $7.28 · 5.57M tok | gemini-4-neon 91.57 · $5.04 · 5.99M tok | gpt-6.2-astra 90.45 · $4.96 · 3.03M tok | gpt-6.2-sol 87.45 · $1.44 · 3.11M tok | muse-wonder, gemini-4-argon, gemini-4-neon, gpt-6.2-astra, grok-4.7 |

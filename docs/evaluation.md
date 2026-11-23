@@ -20,8 +20,8 @@ they are meant to do on these sets. They are not a guarantee about any particula
 | Standard forms trusted as standard forms (P >= 0.7) | 17/20 | 15/20 | 11/20 |
 | Section answer under 0.7 (sent to the overall #1) | 34/195 | 19/195 | 23/195 |
 | Cost to read a request | $0.00014 | free | $0.00014 |
-| Router cost per task (`estimate_savings.py`) | **$7.89** | $8.65 | $9.65 |
-| Saving against all-Opus 5.5 | **64%** | 62% | 57% |
+| Router cost per task (`estimate_savings.py`) | **$7.81** | $8.57 | $9.59 |
+| Saving against all-Opus 5.5 | **65%** | 62% | 57% |
 
 All three pass the safety bar at every threshold measured (law 0.2 to 0.5, standard form 0.6 to 0.9), so
 they share the conservative thresholds in `config/routing-policy.yaml`. d1-ultra is the default because it
@@ -74,19 +74,19 @@ consulting agreement), as intended.
 
 ## What it costs
 
-With Elephant-1 reading them, the same 195 requests, each priced at the Vals Legal Index cost per task of the model it was sent
-to, on its own Vals line (`scripts/estimate_savings.py`, using `docs/data/classifier-answers.jsonl`: the
-classifier's answers only, no request text):
+With d1-ultra reading them, the 195 requests, each priced at the Vals Legal Index cost per task of the model
+it was sent to, on its own Vals line (`scripts/estimate_savings.py`, using
+`docs/data/classifier-answers-d1-ultra.jsonl`: the decision model's answers only, no request text):
 
 | Sending every request to | Cost per task | Tokens per task | Router saves |
 |---|---|---|---|
-| Claude Opus 5.5 | $22.34 | 15.42M | 57% |
-| GPT-6.2 Astra | $10.18 | 3.03M | 5% |
-| Gemini 4 Neon | $6.74 | 5.99M | -43% |
-| Legal Model Router | $9.65 | 7.73M | |
+| Claude Opus 5.5 | $22.20 | 15.42M | 65% |
+| GPT-6.2 Astra | $10.11 | 3.03M | 23% |
+| Gemini 4 Neon | $6.69 | 5.99M | -17% |
+| Legal Model Router | $7.81 | 6.81M | |
 
-Without the 40 bespoke drafts it sends to Opus 5.5 by design, the router costs 72% less than Opus 5.5,
-39% less than GPT-6.2 Astra and 8% less than Gemini 4 Neon. Escalating bespoke drafting to Opus 5.5 is
+Without the 20 bespoke drafts it sends to Opus 5.5 by design, the router costs 73% less than Opus 5.5,
+40% less than GPT-6.2 Astra and 9% less than Gemini 4 Neon. Escalating bespoke drafting to Opus 5.5 is
 the one place it pays more than the cheapest flagship, and it is a policy choice in
 `config/routing-policy.yaml`.
 
