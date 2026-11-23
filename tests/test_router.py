@@ -79,7 +79,7 @@ def test_classify_sends_zdr_and_reads_the_answers():
         w = classify("Is this non-compete enforceable?", key="k", client=c)
     assert w.work_type == "research_or_advice" and w.line == "labor_employment"
     assert seen[0][1]["provider"]["zdr"] is True and seen[0][1]["provider"]["data_collection"] == "deny"
-    assert seen[0][1]["model"] == "baseten/elephant-1"
+    assert seen[0][1]["model"] == core.CLASSIFIERS[core.DEFAULT_CLASSIFIER] and w.classifier == core.DEFAULT_CLASSIFIER
 
 
 def test_classifier_failure_is_none_not_an_exception():

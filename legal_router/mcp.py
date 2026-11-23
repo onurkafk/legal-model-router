@@ -44,7 +44,7 @@ def handle(msg: dict) -> dict | None:
         return None
     if method == "initialize":
         result = {"protocolVersion": (msg.get("params") or {}).get("protocolVersion", "2025-06-18"),
-                  "capabilities": {"tools": {}}, "serverInfo": {"name": "legal-router", "version": "0.2.0"}}
+                  "capabilities": {"tools": {}}, "serverInfo": {"name": "legal-router", "version": "0.3.0"}}
     elif method == "tools/list":
         result = {"tools": [TOOL]}
     elif method == "tools/call":

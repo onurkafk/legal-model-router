@@ -13,7 +13,7 @@ from starlette.background import BackgroundTask
 from starlette.concurrency import run_in_threadpool
 from starlette.responses import JSONResponse, Response, StreamingResponse
 
-from .core import MODELS, OPENROUTER, RouterError, api_key, classify, request_body, route
+from .core import MODELS, OPENROUTER, RouterError, api_key, classify, request_body, resolve_classifier, route
 
 MAX_BODY = 4 * 1024 * 1024
 
@@ -49,10 +49,16 @@ def create_app(client: httpx.AsyncClient | None = None, key: str | None = None) 
             token = api_key(key)
         except RouterError as e:
             return error(401, str(e))
+        try:
+            resolve_classifier()
+        except RouterError as e:
+            return error(500, str(e))
         work = None if sent_back else await run_in_threadpool(classify, messages, key=token)
         r = route(work, sent_back=sent_back, best=best)
         headers = {"X-Legal-Router-Model": r.model, "X-Legal-Router-Pick": r.pick, "X-Legal-Router-Line": r.line,
                    "Cache-Control": "no-store"}
+        if work:
+            headers["X-Legal-Router-Classifier"] = work.classifier
         req = upstream.build_request("POST", f"{OPENROUTER}/v1/chat/completions", json=request_body(messages, r, body),
                                      headers={"Authorization": f"Bearer {token}"})
         try:

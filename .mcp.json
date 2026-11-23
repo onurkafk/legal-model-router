@@ -2,10 +2,19 @@
   "mcpServers": {
     "legal-router": {
       "command": "uv",
-      "args": ["run", "--quiet", "--no-dev", "--directory", "${CLAUDE_PLUGIN_ROOT}", "legal-router", "mcp"],
+      "args": [
+        "run",
+        "--quiet",
+        "--no-dev",
+        "--directory",
+        "${CLAUDE_PLUGIN_ROOT}",
+        "legal-router",
+        "mcp"
+      ],
       "env": {
         "OPENROUTER_API_KEY": "${user_config.openrouter_api_key}",
-        "UV_PROJECT_ENVIRONMENT": "${CLAUDE_PLUGIN_DATA}/venv"
+        "UV_PROJECT_ENVIRONMENT": "${CLAUDE_PLUGIN_DATA}/venv",
+        "LEGAL_ROUTER_CLASSIFIER": "${user_config.decision_model}"
       }
     }
   }

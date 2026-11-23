@@ -1,12 +1,43 @@
 # Evaluation
 
-What the classifier and the routing rules were measured on, and what they scored. Every run used
-Elephant-1 on OpenRouter with the questions in [`config/questions.json`](../config/questions.json).
+What the decision models and the routing rules were measured on, and what they scored. Every run used
+OpenRouter with the questions in [`config/questions.json`](../config/questions.json), the same 195
+requests, and zero data retention.
 
 **The labels were written by Claude, not reviewed by a lawyer.** The figures show that the rules do what
 they are meant to do on these sets. They are not a guarantee about any particular matter.
 
+## Decision models compared
+
+| | d1-ultra (default) | Decider V1.3 | Elephant-1 |
+|---|---|---|---|
+| Vals ClaimBench | 100.0% | 99.8% | 97.3% |
+| Holdout, top answer to the work-type question | **55/55** | 53/55 | 52/55 |
+| Holdout, law + new drafting reach a top model (P >= 0.3) | 31/31 | 31/31 | 31/31 |
+| Stress, law-dependent requests caught | 28/28 | 28/28 | 28/28 |
+| Stress, requests sent to a top model | 51/116 | 47/116 | 56/116 |
+| Bespoke drafts trusted as standard forms | 0/13 | 0/13 | 0/13 |
+| Standard forms trusted as standard forms (P >= 0.7) | 17/20 | 15/20 | 11/20 |
+| Section answer under 0.7 (sent to the overall #1) | 34/195 | 19/195 | 23/195 |
+| Cost to read a request | $0.00014 | free | $0.00014 |
+| Router cost per task (`estimate_savings.py`) | **$7.89** | $8.65 | $9.65 |
+| Saving against all-Opus 5.5 | **64%** | 62% | 57% |
+
+All three pass the safety bar at every threshold measured (law 0.2 to 0.5, standard form 0.6 to 0.9), so
+they share the conservative thresholds in `config/routing-policy.yaml`. d1-ultra is the default because it
+gets every holdout answer right; it also trusts more genuine standard forms, which is where its extra
+saving comes from.
+
+One request moves: a first UK employment contract the client calls "standard stuff, 3 month probation".
+d1-ultra and Decider V1.3 read it as a standard form (0.79 and 0.83) and send it to Efficient, GPT-6.2 Astra
+on Labor & Employment, about a point behind Best. Elephant-1 sent it to Opus 5.5.
+
+The answers are in `docs/data/classifier-answers-<name>.jsonl` and the labels in `docs/data/labels.json`
+(no request text). `tests/test_classifiers.py` replays them through the current rules on every test run.
+
 ## The question that matters most: does work that needs the law reach a top model?
+
+The figures in this section and the next are Elephant-1's; the comparison above covers all three.
 
 A wrong route in one direction costs money: routine work sent to Best. A wrong route in the other
 direction costs quality: research or a bespoke draft sent to a cheaper model. The rules are tuned to
@@ -43,7 +74,7 @@ consulting agreement), as intended.
 
 ## What it costs
 
-The same 195 routed requests, each priced at the Vals Legal Index cost per task of the model it was sent
+With Elephant-1 reading them, the same 195 requests, each priced at the Vals Legal Index cost per task of the model it was sent
 to, on its own Vals line (`scripts/estimate_savings.py`, using `docs/data/classifier-answers.jsonl`: the
 classifier's answers only, no request text):
 

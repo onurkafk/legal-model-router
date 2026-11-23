@@ -109,8 +109,19 @@ economy_within_points: 8.0
 escalation_model: anthropic/claude-opus-5-5   # operator decision, 2026-11-23: always Opus 5.5
 
 # ---------------------------------------------------------------------------------------------
-# 4. Which pick a request gets. The decision model (Elephant-1) answers config/questions.json;
-#    the first rule that matches wins. Thresholds are the ones measured in docs/evaluation.md.
+# 4. The decision models a user may choose. Each was run on the same 195 requests and met the
+#    routing-safety bar at the thresholds below (docs/evaluation.md). Add one only after that run.
+# ---------------------------------------------------------------------------------------------
+classifiers:
+  d1-ultra: liquid/d1-ultra                        # Vals ClaimBench 100.0%; holdout 55/55
+  decider-v1.3: perplexity/pplx-decider-v1.3:free  # Vals ClaimBench 99.8%; holdout 53/55; free on OpenRouter
+  elephant-1: baseten/elephant-1                   # Vals ClaimBench 97.3%; holdout 52/55
+default_classifier: d1-ultra   # operator, 2026-11-24: the best holdout accuracy of the measured models
+
+# ---------------------------------------------------------------------------------------------
+# 5. Which pick a request gets. The decision model answers config/questions.json; the first rule
+#    that matches wins. Every listed classifier passes the safety bar at every threshold measured
+#    (law 0.2-0.5, standard form 0.6-0.9), so the thresholds stay at their conservative values.
 # ---------------------------------------------------------------------------------------------
 rules:
   - when: {sent_back: true}

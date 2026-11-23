@@ -2,18 +2,22 @@
 import argparse
 import getpass
 import json
+import os
 import sys
 
 import httpx
 
-from .core import OPENROUTER, TABLE, RouterError, api_key, classify, route, save_key
+from .core import (CLASSIFIERS, DEFAULT_CLASSIFIER, OPENROUTER, TABLE, RouterError, api_key, classify,
+                   resolve_classifier, route, save_config)
 
-USAGE = """legal-router init               save your OpenRouter key (~/.legal-router/config.json, readable only by you)
+USAGE = f"""legal-router init               save your OpenRouter key and decision model (~/.legal-router/config.json, yours only)
 legal-router serve [--port N]   OpenAI-compatible endpoint at http://127.0.0.1:8404/v1
 legal-router mcp                the router as an MCP tool, for any MCP client
 legal-router claude             add /legal-router to Claude Code (personal skill + MCP tool)
 legal-router route "<task>"     show which model would do a task (one classifier call, ~$0.0001)
-legal-router doctor             check the key, the classifier and zero data retention"""
+legal-router doctor             check the key, the decision model and zero data retention
+
+  --classifier NAME             the decision model for this run: {', '.join(CLASSIFIERS)}"""
 
 
 def doctor() -> int:
@@ -30,15 +34,26 @@ def doctor() -> int:
         ok &= r.status_code == 200
         zdr = c.get(f"{OPENROUTER}/v1/endpoints/zdr").json()
         zdr = {e["model_id"] for e in zdr.get("data", zdr)}
-    for m in sorted({*TABLE["models"], "baseten/elephant-1"}):
+    name = resolve_classifier()
+    print(f"decision model: {name} ({CLASSIFIERS[name]})")
+    for m in sorted({*TABLE["models"], CLASSIFIERS[name]}):
         has = m in zdr
         ok &= has
         print(f"zero data retention: {'yes' if has else 'NO '}  {m}")
     work = classify("Is a five-year non-compete enforceable in California?", key=key)
-    print(f"classifier: {'answers' if work else 'NO ANSWER'}" + (f" ({work.work_type}, {work.line})" if work else ""))
+    print(f"decision model: {'answers' if work else 'NO ANSWER'}" + (f" ({work.work_type}, {work.line})" if work else ""))
     ok &= work is not None
     print("ready" if ok else "not ready")
     return 0 if ok else 1
+
+
+def init() -> int:
+    key = getpass.getpass("OpenRouter API key (Enter keeps the saved one): ").strip()
+    names = ", ".join(CLASSIFIERS)
+    name = input(f"Decision model [{DEFAULT_CLASSIFIER}] ({names}): ").strip() or DEFAULT_CLASSIFIER
+    path = save_config(openrouter_api_key=key, classifier=resolve_classifier(name))
+    print(f"saved to {path}")
+    return doctor()
 
 
 def add_to_claude_code() -> int:
@@ -66,11 +81,20 @@ def main() -> None:
     p.add_argument("command", choices=["init", "serve", "mcp", "route", "doctor", "claude"])
     p.add_argument("task", nargs="?")
     p.add_argument("--port", type=int, default=8404)
+    p.add_argument("--classifier")
     a = p.parse_args()
+    try:
+        if a.classifier:   # checked here, then read by every part of the router
+            os.environ["LEGAL_ROUTER_CLASSIFIER"] = resolve_classifier(a.classifier)
+        resolve_classifier()
+        run(p, a)
+    except RouterError as e:
+        p.exit(2, f"legal-router: {e}\n")
+
+
+def run(p: argparse.ArgumentParser, a: argparse.Namespace) -> None:
     if a.command == "init":
-        path = save_key(getpass.getpass("OpenRouter API key: ").strip())
-        print(f"saved to {path}")
-        sys.exit(doctor())
+        sys.exit(init())
     if a.command == "doctor":
         sys.exit(doctor())
     if a.command == "claude":
@@ -81,7 +105,8 @@ def main() -> None:
     elif a.command == "serve":
         import uvicorn
         from .server import create_app
-        print(f"Legal Model Router on http://127.0.0.1:{a.port}/v1  (models: legal-router/auto, legal-router/best)")
+        print(f"Legal Model Router on http://127.0.0.1:{a.port}/v1  (models: legal-router/auto, legal-router/best; "
+              f"decision model: {resolve_classifier()})")
         uvicorn.run(create_app(), host="127.0.0.1", port=a.port, access_log=False)
     elif a.command == "route":
         if not a.task:

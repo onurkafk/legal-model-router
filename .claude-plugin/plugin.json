@@ -1,6 +1,6 @@
 {
   "name": "legal-router",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Legal Model Router: sends each piece of legal work to the model best suited to it (Vals Legal Index), through OpenRouter with zero data retention. Say 'not good enough' to send an answer back to Claude Opus 5.5.",
   "author": {
     "name": "onurkafk",
@@ -22,6 +22,13 @@
       "description": "Used for the classifier and the model that does the work. Stored in your OS credential store.",
       "sensitive": true,
       "required": true
+    },
+    "decision_model": {
+      "type": "string",
+      "title": "Decision model",
+      "description": "The model that reads each request: d1-ultra (default), decider-v1.3 (free) or elephant-1.",
+      "default": "d1-ultra",
+      "required": false
     }
   }
 }

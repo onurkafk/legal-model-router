@@ -75,7 +75,7 @@ def page(theme: str) -> str:
   <h1>{saving:.0%} less than Claude Opus 5.5</h1>
   <div class="chart">{''.join(rows)}
   </div>
-  <footer>{e['requests']} legal requests at Vals Legal Index prices, 19 Nov 2026. Bespoke drafting still goes to Opus 5.5.</footer>
+  <footer>{e['requests']} legal requests read by d1-ultra, at Vals Legal Index prices (19 Nov 2026). Bespoke drafting still goes to Opus 5.5.</footer>
 </body>
 </html>
 '''

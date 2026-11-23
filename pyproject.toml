@@ -1,6 +1,6 @@
 [project]
 name = "legal-router"
-version = "0.2.0"
+version = "0.3.0"
 description = "Legal Model Router: reads a legal request, picks the model from the Vals Legal Index, calls it through OpenRouter with zero data retention."
 readme = "README.md"
 license = "MIT"

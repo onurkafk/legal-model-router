@@ -79,6 +79,12 @@
   "tax": "tax_agent_bench",
   "other": "overall"
  },
+ "classifiers": {
+  "d1-ultra": "liquid/d1-ultra",
+  "decider-v1.3": "perplexity/pplx-decider-v1.3:free",
+  "elephant-1": "baseten/elephant-1"
+ },
+ "default_classifier": "d1-ultra",
  "rules": [
   {
    "when": {
