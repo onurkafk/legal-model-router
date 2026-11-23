@@ -19,31 +19,32 @@ One OpenRouter key. One command: `/legal-router` in Claude Code. Zero data reten
 
 ---
 
-## What it saves
+## The same legal work for 63% less
+
+We wrote 195 realistic legal requests, from research questions and contract drafts to reviews, extractions,
+translations and billing questions. Then we priced each one twice: on the model the router chose, and on
+Claude Opus 5.5 for everything.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/savings-dark.png">
   <img alt="Average cost per legal task: Claude Opus 5.5 $22.29, GPT-6.2 Astra $10.17, Legal Model Router $8.27" src="docs/assets/savings-light.png" width="720">
 </picture>
 
-195 legal requests (research, contracts, filings, reviews, extractions, summaries, translations, admin),
-each read by d1-ultra and priced at the Vals Legal Index cost of the model it was sent to:
+An average task costs **$8.27 instead of $22.29**, and uses less than half the tokens. That is **$14,020
+saved on every 1,000 tasks**. The router also beats running everything on GPT-6.2 Astra, by 19%.
 
-| Sending every request to | Cost per task | Tokens per task | The router costs |
+The savings come from routine work. The work that needs the strongest model still gets it:
+
+| Kind of work | Share of requests | Goes to | Cost against Opus 5.5 |
 |---|---|---|---|
-| Claude Opus 5.5 | $22.29 | 15.4M | **63% less, with less than half the tokens** |
-| GPT-6.2 Astra | $10.17 | 3.0M | **19% less** |
-| **Legal Model Router** | **$8.27** | 7.0M | |
+| Research and advice: anything that turns on the law | 40% | The line's best model that knows the law | **70% less** |
+| Review and markup of supplied text, standard-form drafting | 18% | A top-5 model within 3 points of #1 | **71% less** |
+| Extraction, summaries, translation, admin | 29% | The cheapest strong model | **78% less** |
+| Bespoke drafting | 13% | Claude Opus 5.5 | same |
 
-- **$14,020 saved on every 1,000 tasks** against an all-Opus 5.5 setup.
-- **Research and advice cost 70% less** than on Opus 5.5, on each line's best model that knows the law.
-- **Extraction, summaries, translation and admin cost 78% less** than on Opus 5.5: $4.95 a task against $22.17.
-- **Everything except bespoke drafting costs 73% less than Opus 5.5** and 9% less than Gemini 4 Neon, the
-  overall #1, because each line's work goes to that line's best-value model.
-- **Reading a request costs $0.00014** with d1-ultra, nothing with Decider V1.3.
-
-Reproduce it with `uv run python scripts/estimate_savings.py [--classifier NAME]`: no key, no network. Prices are Vals Legal
-Index task prices (19 November 2026); your bill scales with the size of your requests.
+Reading each request first costs $0.00014 with d1-ultra, and nothing with Decider V1.3. Prices are Vals Legal
+Index task prices (19 November 2026); your bill scales with the size of your requests. Check every figure
+with `uv run python scripts/estimate_savings.py`: no key, no network.
 
 ## Why one model is the wrong default
 
