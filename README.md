@@ -191,7 +191,7 @@ to Claude Opus 5.5.
 ### From the command line (pipx)
 
 ```bash
-pipx install git+https://github.com/onurkafk/legal-model-router
+pipx install legal-router
 legal-router init       # saves your key to ~/.legal-router/config.json (readable only by you) and checks it
 legal-router claude     # optional: adds the bare /legal-router command and the tool to Claude Code
 ```
